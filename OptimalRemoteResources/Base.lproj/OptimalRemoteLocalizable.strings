@@ -1,0 +1,56 @@
+"ORIADialogSDPCancelButtonTitleCancel" = "Cancel";
+"ORIADialogSDPCancelMessage" = "Are you sure to cancel connection?";
+"ORIADialogSDPCancelButtonTitleYes" = "Yes";
+"ORIADialogSDPCancelButtonTitleNo" = "No";
+
+"ORIADialogNotReachableMessage" = "Cannot connect to the Internet. Please retry under better receiption.";
+"ORIADialogNotReachableButtonTitleExit" = "Exit";
+"ORIADialogNotReachableButtonTitleRetry" = "Retry";
+
+"ORIADialogConnectionConfirmationMessageFormat" = "Are you sure to accept connection from a operator of '%@'?";
+"ORIADialogConnectionConfirmationButtonTitleDecline" = "Decline";
+"ORIADialogConnectionConfirmationButtonTitleAccept" = "Accept";
+
+"ORIADialogConnectionFailureMessage" = "Cannot connect to the operator. Please retry under better receiption.";
+"ORIADialogConnectionFailureButtonTitleExit" = "Exit";
+"ORIADialogConnectionFailureButtonTitleRetry" = "Retry";
+
+"ORIADialogReconnectConfirmationMessage" = "Connection has disconnected. Please retry under better receiption.";
+"ORIADialogReconnectConfirmationButtonTitleExit" = "Exit";
+"ORIADialogReconnectConfirmationButtonTitleRetry" = "Reconnect";
+
+"ORIADialogDisconnectConfirmationMessage" = "Are you sure to disconnect connection?";
+"ORIADialogDisconnectConfirmationButtonTitleExit" = "Yes";
+"ORIADialogDisconnectConfirmationButtonTitleContinue" = "No";
+
+"ORIAWillReserveMessage" = "Connecting...";
+
+"ORIADidReserveMessage" = "Please tell below \r\nReceipt Number to operator.";
+
+"ORIAWillConnectMessage" = "Connecting...";
+"ORIAWillReconnectMessage" = "Reconnecting...";
+
+"ORIABalloonTapToExitMessage" = "Tap above icon to exit.";
+
+"ORIAThakyouMessage" = "Thank you for your using.";
+
+"ORIACancelIndicatorMessage" = "Cancelling...";
+"ORIAAcceptIndicatorMessage" = "Accepting...";
+"ORIADeclineIndicatorMessage" = "Declineing...";
+"ORIADisconnectIndicatorMessage" = "Disconnecting...";
+
+"ORIAButtonTitleOK" = "OK";
+"ORIAResolveExpiredMessage" = "The receipt number exipred.\r\nThe connection will cancel.";
+"ORIADidReceivedInvalidSessionDescMessage" = "Received invalid session information.\r\nThe connection will cancel.";
+"ORIADidReceivedInvalidCertsMessage" = "Received invalid certificates.\r\nThe connection will cancel.";
+"ORIADidReceivedServerErrorMessageFormat" = "Connection error occurred.\r\nThe connection will cancel.\r\n\r\n(error: %u, %u)";
+
+"ORIARemoteControlConfirmationDialogTitle" = "Remote Control Confirmation";
+"ORIARemoteControlConfirmationDialogMessage" = "The operator has requested your permission for remote control. Would you like to give the permission?\r\n\r\nIn this process, the operator will not attempt to obtain or change personal information on your computer. All the settings are done under the agreement of the customer.";
+"ORIARemoteControlConfirmationDialogButtonTitleDecline" = "Decline";
+"ORIARemoteControlConfirmationDialogButtonTitleAccept" = "Accept";
+"ORIARemoteControlConfirmationDialogButtonTitleAcceptOnce" = "Accept (Once)";
+
+"ORIAAssistiveMenuSpeakerButtonLabel" = "Speaker";
+"ORIAAssistiveMenuMuteButtonLabel" = "Mute";
+"ORIAAssistiveMenuDisconnectButtonLabel" = "Disconnect";

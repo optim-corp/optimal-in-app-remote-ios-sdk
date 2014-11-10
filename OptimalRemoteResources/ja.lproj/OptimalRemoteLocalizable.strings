@@ -1,0 +1,56 @@
+"ORIADialogSDPCancelButtonTitleCancel" = "中断する";
+"ORIADialogSDPCancelMessage" = "リモートサポートを中断しますか？";
+"ORIADialogSDPCancelButtonTitleYes" = "はい";
+"ORIADialogSDPCancelButtonTitleNo" = "いいえ";
+
+"ORIADialogNotReachableMessage" = "インターネットに接続できませんでした。電波の良い所でご利用ください。";
+"ORIADialogNotReachableButtonTitleExit" = "終了";
+"ORIADialogNotReachableButtonTitleRetry" = "再試行";
+
+"ORIADialogConnectionConfirmationMessageFormat" = "「%@」のオペレーターが接続を要求しています。\r\n\r\n許可しますか？";
+"ORIADialogConnectionConfirmationButtonTitleDecline" = "拒否";
+"ORIADialogConnectionConfirmationButtonTitleAccept" = "許可";
+
+"ORIADialogConnectionFailureMessage" = "オペレーターとの接続に失敗しました。電波の良い所でご利用ください。";
+"ORIADialogConnectionFailureButtonTitleExit" = "終了";
+"ORIADialogConnectionFailureButtonTitleRetry" = "再試行";
+
+"ORIADialogReconnectConfirmationMessage" = "オペレーターとの接続が切断されました。電波の良い所でご利用ください。";
+"ORIADialogReconnectConfirmationButtonTitleExit" = "終了";
+"ORIADialogReconnectConfirmationButtonTitleRetry" = "再接続";
+
+"ORIADialogDisconnectConfirmationMessage" = "リモートサポートを切断しますか？";
+"ORIADialogDisconnectConfirmationButtonTitleExit" = "はい";
+"ORIADialogDisconnectConfirmationButtonTitleContinue" = "いいえ";
+
+"ORIAWillReserveMessage" = "接続しています・・・";
+
+"ORIADidReserveMessage" = "下記の受付番号を\r\nオペレーターにお伝えください。";
+
+"ORIAWillConnectMessage" = "接続しています・・・";
+"ORIAWillReconnectMessage" = "再接続しています・・・";
+
+"ORIABalloonTapToExitMessage" = "終了する場合は\r\nタップしてください。";
+
+"ORIAThakyouMessage" = "ご利用ありがとうございました。";
+
+"ORIACancelIndicatorMessage" = "中断しています・・・";
+"ORIAAcceptIndicatorMessage" = "許可しています・・・";
+"ORIADeclineIndicatorMessage" = "拒否しています・・・";
+"ORIADisconnectIndicatorMessage" = "切断しています・・・";
+
+"ORIAButtonTitleOK" = "OK";
+"ORIAResolveExpiredMessage" = "受付番号の有効期限が切れました。\r\n接続を中断します。";
+"ORIADidReceivedInvalidSessionDescMessage" = "サーバーから不正なセッション情報を受信しました。接続を中断します。";
+"ORIADidReceivedInvalidCertsMessage" = "サーバーから不正な証明書を受信しました。接続を中断します。";
+"ORIADidReceivedServerErrorMessageFormat" = "通信エラーが発生しました。\r\n接続を中断します。\r\n\r\n(エラー: %u, %u)";
+
+"ORIARemoteControlConfirmationDialogTitle" = "リモート操作の確認";
+"ORIARemoteControlConfirmationDialogMessage" = "オペレーターが遠隔による操作を要求しています。よろしいでしょうか？\r\n\r\nなお、操作ではオペレーターがお客さまのデータを取得、改ざんすることはありません。すべてお客さまの同意に基づき設定を行います。";
+"ORIARemoteControlConfirmationDialogButtonTitleDecline" = "拒否";
+"ORIARemoteControlConfirmationDialogButtonTitleAccept" = "許可";
+"ORIARemoteControlConfirmationDialogButtonTitleAcceptOnce" = "許可 (今回のみ)";
+
+"ORIAAssistiveMenuSpeakerButtonLabel" = "スピーカー";
+"ORIAAssistiveMenuMuteButtonLabel" = "消音";
+"ORIAAssistiveMenuDisconnectButtonLabel" = "切断";

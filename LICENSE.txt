@@ -1,0 +1,688 @@
+Optimal In-App Remote SDK for iOS Agreement
+
+PLEASE SCROLL DOWN AND READ ALL OF THE FOLLOWING TERMS AND CONDITIONS CAREFULLY BEFORE USING THE SOFTWARE. THIS IS A LEGAL AGREEMENT BETWEEN YOU AND OPTIM. IF YOU AGREE TO BE BOUND BY ALL OF THE TERMS AND CONDITIONS, CLICK THE "AGREE" BUTTON OR CHECK THE BOX DISPLAYED AT THE END OF THIS AGREEMENT IF YOU ARE READING THIS ON AN OPTIM WEBSITE OR CHECK THE BOX ON OPTIM DEVELOPER REGISTRATION FORM. BY CLICKING "AGREE", CHECKING THE BOX OR BY DOWNLOADING, USING OR COPYING ANY PART OF THIS SDK, YOU ARE AGREEING ON YOUR OWN BEHALF AND/OR ON BEHALF OF YOUR COMPANY TO THE TERMS AND CONDITIONS STATED BELOW. IF YOU DO NOT OR CANNOT AGREE TO THE TERMS OF THIS AGREEMENT, YOU CANNOT USE THIS SDK. DO NOT DOWNLOAD OR USE THIS SDK IN THAT CASE.
+
+
+1. Definitions
+Whenever capitalized in this Agreement:
+"Agreement" means this SDK Agreement.
+ "OPTiM" means OPTiM Corporation., a Japanese corporation with its principal place of business at Atago Green Hills MORI Tower 19F , 2-5-1 ?Atago, Minato-ku?Tokyo, 105-6219, Japan.
+"Application" means one or more software programs developed by You in compliance with this Agreement, under Your own trademark or brand.
+"Authorized Users" means Your employees and contractors or, if You are an educational
+institution, Your faculty and staff who (a) each have an active and valid Registered OPTiM
+Developer account with OPTiM, (b) have a demonstrable need to know or use the SDK in order to develop and test Applications, and (c) to the extent such individuals will have access to OPTiM Confidential Information, each have written and binding agreements with You to protect the unauthorized use and disclosure of such OPTiM and third party confidential information.
+"Documentation" means any technical or other specifications or documentation that OPTiM may provide to You for use in connection with the SDK. 
+"FOSS" (Free and Open Source Software) means any software that is subject to terms that, as a condition of use, copying, modification or redistribution, require such software and/or derivative works thereof to be disclosed or distributed in source code form, to be licensed for the purpose of making derivative works, or to be redistributed free of charge, including without limitation software distributed under the GNU General Public License or GNU Lesser/Library GPL.
+ "SDK" (Software Development Kit) means the Documentation, software (source code and object code), applications, sample code, simulator, tools, libraries, APIs, data, files, and materials provided by OPTiM for use by You in connection with Your Application development, and includes any Updates that may be provided by OPTiM to You pursuant to this Agreement.
+"Integrated Product" means the combined product created by or for You, which integrates the SDK in object code format with other software that contains significant functionality not included in the SDK.
+"Term" means the period described in Section 6.
+"Updates" means bug fixes, updates, upgrades, modifications, enhancements, supplements, and new releases or versions of the SDK, or to any part of the SDK.
+"You" or "Your" means the person(s) or entity using the SDK or otherwise exercising rights under this Agreement. If You are entering into this Agreement on behalf of Your company, organization, educational institution, or an agency, instrumentality, or department of the federal government,
+"You" or "Your" refers to your company, organization, educational institution or agency,
+instrumentality, or department of the federal government as well.
+
+2. SDK Internal Use License and Restrictions
+2.1 Confidential Nature of Pre-Release SDK
+Pre-release versions of the SDK constitute OPTiM Confidential Information and are subject to the confidentiality obligations of this Agreement. Such pre-release versions of the SDK should not be relied upon to perform in the same manner as a final-release, commercial-grade product, nor should they be used with data that is not sufficiently and regularly backed up. Distribution of Applications created with the SDK is not permitted absent a separate agreement with OPTiM.
+2.2 License to Reproduce and Sublicense Object Code.
+Subject to the terms and conditions of this Agreement, OPTiM hereby grants to You and the Designated Third-Party Contractor, a worldwide, non-exclusive, non-transferable, license to reproduce the The SDK in machine-readable, compiled object code format only, for the purposes of: (a) developing, reproducing, manufacturing, and sublicensing copies of the The SDK as part of an Integrated Product directly or indirectly to End-Users under the terms of an End-User license agreement pursuant to Section 2.3, and (b) You's internal development and testing efforts relating to integration of the The SDK into You products. You shall make no use of any copies (other than for archival purposes) of the The SDK except as provided in this Section. You may not sublicense the rights granted under this Section 2.2. All rights not specifically granted herein shall be retained by OPTiM.
+2.3 License Restrictions. 
+You agrees that You and its employees and contractors shall not, without the written consent of  OPTiM, directly or indirectly make any attempt, or to authorize any attempt, to (i) modify, enhance, translate, alter, tamper with, upgrade or create derivatives works of the The SDK or the accompanying documentation; or (ii) strip out or alter any trademark, service mark, copyright, patent, trade secret, ownership or any other proprietary or intellectual property notices, legends, warnings, markings or indications on or within any component of the The SDK or the accompanying documentation. 
+2.4 Further Restrictions on Object Code.
+ You shall not integrate the The SDK with any products other than the Integrated Products without first obtaining OPTiM’s prior written consent. You shall not sublicense the The SDK and/or Integrated Products in any manner except as expressly provided in this Section 2. In particular, to ensure that the The SDK can be used only as part of the Integrated Product, the The SDK’s application programming interfaces ("APIs") must not be exposed to the End User, and the End User must be contractually prohibited from accessing the OPTiM APIs. The Integrated Products sublicensed by You shall be sublicensed pursuant to a binding End-User license agreement covering such End-User’s use of the Integrated Products, which agreement is consistent with, and no less protective of OPTiM’s rights in the The SDK than the terms of this Agreement.
+2.3 Copies
+You agree to retain and reproduce in full the OPTiM copyright, disclaimers and other proprietary notices (as they appear in the SDK and Documentation provided) in all copies of the SDK and Documentation that You are permitted to make under this Agreement.
+2.4 Ownership
+OPTiM retains all rights, title, and interest in and to the SDK. You agree to cooperate with OPTiM to maintain OPTiM's ownership of the SDK, and, to the extent that You become aware of any claims relating to the SDK, You agree to use reasonable efforts to promptly provide notice of any such claims to OPTiM. The parties acknowledge that this Agreement does not give OPTiM any ownership interest in Your Applications.
+2.5 No Other Permitted Uses
+Unless otherwise expressly permitted by OPTiM in writing, You agree not to rent, lease, lend, upload to or host on any website or server, sell, redistribute, or sublicense the SDK, in whole or in part, or to enable others to do so. You may not use the SDK for any purpose not expressly permitted by this Agreement. 
+2.6 Updates; No Support or Maintenance
+OPTiM may extend, enhance, or otherwise modify the SDK at any time without notice, but OPTiM shall not be obligated to provide You with any Updates to the SDK. If Updates are made available by OPTiM, the terms of this Agreement will govern such Updates, unless the Update is accompanied by a separate license in which case the terms of that license will govern. OPTiM is not obligated to provide any maintenance, technical or other support for the SDK. You acknowledge that OPTiM has no express or implied obligation to announce or make available any Updates of the SDK to anyone in the future. Should an Update be made available, it may have APIs, features, services or functionality that are different from those found in the SDK licensed hereunder.
+2.7 Open Source Software.
+The parties agree that neither party shall subject the The SDK, in whole or in part, to any license obligations associated with FOSS. FOSS includes, without limitation, software licensed or distributed under the licenses described in schedule A.
+
+3. Your Obligations
+3.1 General
+You certify to OPTiM and agree that:
+(a) You are of the legal age of majority in the jurisdiction in which You reside (at least 18 years of age in many countries) and have the right and authority to enter into this Agreement on Your own behalf, or if You are entering into this Agreement on behalf of Your company, organization, educational institution, or agency, instrumentality, or department of the federal government, that You have the right and authority to legally bind such entity or organization to the terms and obligations of this Agreement;
+(b) All information provided to OPTiM by You will be current, true, accurate, supportable and complete; 
+(c) You will comply with the terms of and fulfill Your obligations under this Agreement and You agree to monitor and be responsible for Your Authorized Users’ use of the SDK and their compliance with the terms of this Agreement; and
+(d) You will be solely responsible for all costs, expenses, losses and liabilities incurred, and activities undertaken by You and Authorized Users in connection with the YOU’RE YOUR Applications and Your related development efforts.
+3.2 Use of the SDK
+As a condition to using the SDK, You agree that:
+(a) You will only use the SDK for the purposes and in the manner expressly permitted by this Agreement and in accordance with all applicable laws and regulations;
+(b) You will not use the SDK for any unlawful or illegal activity, nor to develop any Application which would commit or facilitate the commission of a crime, or other tortious, unlawful, or illegal act;
+(c) To the best of Your knowledge and belief, Your Application does not and will not violate, misappropriate, or infringe any OPTiM or third party copyrights, trademarks, rights of privacy and publicity, trade secrets, patents, or other proprietary or legal rights (e.g. musical composition or performance rights, video rights, photography or image rights, logo rights, third party data rights, etc. for content and materials that may be included in Your Application); and
+(d) You will not, through use of the SDK or otherwise, create any Application or other program that would disable, hack or otherwise interfere with any security, digital signing, digital rights management, content protection, verification or authentication mechanisms implemented in or by the operating system software, this SDK, or other The SDK, services or technology, or enable others to do so.
+
+4. Confidentiality
+4.1 Information Deemed OPTiM Confidential
+You agree that all pre-release versions of the SDK (including pre-release Documentation) will be deemed "OPTiM Confidential Information"; provided however that upon the commercial release of the SDK the terms and conditions that disclose pre-release features of the SDK will no longer be confidential. Other non-public information disclosed by OPTiM to You in connection with this Agreement will be deemed OPTiM Confidential Information under this Agreement only if it is identified or marked as "Confidential" if disclosed in writing, or is designated as being confidential at the time of disclosure, if disclosed orally or visually. Notwithstanding the foregoing, OPTiM Confidential Information will not include: (i) information that is generally and legitimately available to the public through no fault or breach of Yours, (ii) information that is generally made available to the public by OPTiM, (iii) information that is independently developed by You without the use of any OPTiM Confidential Information, (iv) information that was rightfully obtained from a third party who had the right to transfer or disclose it to You without limitation, or (v) any FOSS included in the SDK and accompanied by licensing terms that do not impose confidentiality obligations on the use or disclosure of such FOSS.
+4.2 Obligations Regarding OPTiM Confidential Information
+You agree to protect OPTiM Confidential Information using at least the same degree of care that You use to protect Your own confidential information of similar importance, but no less than a reasonable degree of care. You agree to use OPTiM Confidential Information solely for the purpose of exercising Your rights and performing Your obligations under this Agreement and agree not to use OPTiM Confidential Information for any other purpose, for Your own or any third party’s benefit, without OPTiM's prior written consent. You further agree not to disclose or disseminate OPTiM Confidential Information to anyone other than: (i) those of Your employees and contractors, or those of Your faculty and staff if You are an educational institution, who have a need to know and who are bound by a written agreement that prohibits unauthorized use or disclosure of the OPTiM Confidential Information; or (ii) except as otherwise agreed or permitted in writing by OPTiM. You may disclose OPTiM Confidential Information to the extent required by law, provided that You take reasonable steps to notify OPTiM of such requirement before disclosing the OPTiM Confidential Information and to obtain protective treatment of the OPTiM Confidential Information. You acknowledge that damages for improper disclosure of OPTiM Confidential Information may be irreparable; therefore, OPTiM is entitled to seek equitable relief, including injunction and preliminary injunction, in addition to all other remedies.
+4.3 Information Submitted to OPTiM Not Deemed Confidential
+OPTiM works with many application and software developers and some of their products may be similar to or compete with Your Applications. OPTiM may also be developing its own similar or competing applications and products or may decide to do so in the future. To avoid potential misunderstandings, OPTiM cannot agree, and expressly disclaims, any confidentiality obligations or use restrictions, express or implied, with respect to any information that You may provide in connection with this Agreement, including information about Your Application (such disclosures will be referred to as "Licensee Disclosures"). You agree that any such Licensee Disclosures will be non-confidential. OPTiM will be free to use and disclose any Licensee Disclosures on an unrestricted basis without notifying or compensating You. You release OPTiM from all liability and obligations that may arise from the receipt, review, use, or disclosure of any portion of any Licensee Disclosures. Any physical materials You submit to OPTiM will become OPTiM property and OPTiM will have no obligation to return those materials to You or to certify their destruction.
+4.4 Press Releases and Other Publicity
+You may not issue any press releases or make any other public statements regarding this Agreement, its terms and conditions, or the relationship of the parties without OPTiM’s express prior written approval, which may be withheld at OPTiM's discretion.
+
+5. Indemnification
+To the extent permitted by applicable law, You agree to indemnify, defend and hold harmless OPTiM, its directors, officers, employees, independent contractors and agents (each an "OPTiM Indemnified Party") from any and all claims, losses, liabilities, damages, expenses and costs (including without limitation attorneys' fees and court costs) (collectively "Losses") incurred by an OPTiM Indemnified Party as a result of Your breach of this Agreement, a breach of any certification, covenant, representation or warranty made by You in this Agreement, any claims that Your Applications violate or infringe any third party intellectual property or proprietary rights, or otherwise related to or arising from Your use of the SDK, Your Application(s) or Your development of Applications. You acknowledge that the SDK is not intended for use in the development of Applications in which errors or inaccuracies in the content, functionality, services, data or information provided by the Application or the failure of the Application could lead to death, personal injury, or severe physical or environmental damage, and, to the extent permitted by law, You hereby agree to indemnify, defend and hold harmless each OPTiM Indemnified Party from any Losses incurred by such OPTiM Indemnified Party by reason of any such use. In no event may You enter into any settlement or like agreement with a third party that affects OPTiM's rights or binds OPTiM in any way, without the prior written consent of OPTiM.
+
+6. Term and Termination
+6.1 Term
+The license to use this version of the SDK is effective until terminated in accordance with Section 6.2.
+6.2 Termination
+This Agreement and all rights under this Agreement will terminate automatically or cease to be effective without notice from OPTiM if You or any of Your Authorized Users fail to comply with any term(s) of this Agreement. In addition, OPTiM reserves the right to terminate this Agreement if the SDK is released which is incompatible with this version of the SDK. Either party may terminate this Agreement for its convenience, for any reason or no reason, effective 30 days after providing the other party with written notice of its intent to terminate.
+6.3 Effect of Termination
+Upon the termination of this Agreement for any reason, You agree to immediately cease all use of the SDK and erase and destroy all copies, full or partial, of the SDK and all copies of OPTiM Confidential Information in Your and Your Authorized Users' possession or control. At OPTiM’s request, You agree to provide written certification of such destruction to OPTiM. The provisions of Sections 1, 2.4, 2.5, 3.1(d), 3.2(c), 3.2(d), 3.2(e), 3.2(f), 4, 5, 6, 7, 8, and 9 will survive any termination of this Agreement. OPTiM will not be liable for compensation, indemnity, or damages of any sort as a result of terminating this Agreement in accordance with its terms, and termination of this Agreement will be without prejudice to any other right or remedy OPTiM may have, now or in the future.
+
+7. NO WARRANTY
+The SDK may contain inaccuracies or errors that could cause failures or loss of data and it may be incomplete. OPTiM may, through the SDK, provide or make available services (collectively the "Services"). OPTiM and its licensors reserve the right to change, suspend, remove, or disable access to any Services at any time without notice. In no event will OPTiM be liable for the removal of or disabling of access to any such Services. OPTiM may also impose limits on the use of or access to certain Services, in any case and without notice or liability. 
+YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE SDK AND SERVICES IS AT YOUR SOLE RISK AND THAT THE ENTIRE RISK AS TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOU. THE SDK AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND OPTIM AND OPTIM'S LICENSORS (COLLECTIVELY REFERRED TO AS "OPTIM" FOR THE PURPOSES OF
+SECTIONS 7 AND 8) HEREBY DISCLAIM ALL WARRANTIES AND CONDITIONS WITH
+RESPECT TO THE SDK AND SERVICES, EITHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, TIMELINESS, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS. OPTIM DOES NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE SDK, THAT THE SDK OR SERVICES WILL MEET YOUR REQUIREMENTS, THAT THE OPERATION OF THE SDK OR SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS IN THE SDK OR SERVICES WILL BE CORRECTED, OR THAT THE SDK OR SERVICES WILL BE COMPATIBLE WITH FUTURE OPTIM PRODUCTS OR SOFTWARE. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY OPTIM OR AN OPTIM AUTHORIZED REPRESENTATIVE WILL CREATE A WARRANTY. SHOULD THE SDK OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+8. LIMITATION OF LIABILITY
+TO THE EXTENT NOT PROHIBITED BY APPLICABLE LAW, IN NO EVENT WILL OPTIM BE LIABLE FOR PERSONAL INJURY, OR ANY INCIDENTAL, SPECIAL, INDIRECT, CONSEQUENTIAL OR PUNITIVE DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO THIS AGREEMENT, YOUR USE OR INABILITY TO USE THE SDK OR SERVICES, OR YOUR DEVELOPMENT EFFORTS, HOWEVER CAUSED, WHETHER UNDER A THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCTS LIABILITY, OR OTHERWISE, EVEN IF OPTIM HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. In no event shall OPTiM’s total liability to You under this Agreement for all damages (other than as may be required by applicable law in cases involving personal injury) exceed the amount of fifty dollars ($50.00).
+
+9. General Legal Terms
+9.1 Third Party Notices
+Portions of the SDK utilize or include third party software and other copyrighted material. Acknowledgements, licensing terms and disclaimers for such material are contained in the electronic documentation for the SDK, and Your use of such material is governed by their respective terms.
+9.2 Consent to Collection and Use of Non-Personal Data
+You agree that OPTiM and its subsidiaries may collect and use technical and related information, including but not limited to information about Your Applications, computer, system software, other software and peripherals, that is gathered periodically to facilitate the provision of software updates and other services to You (if any) related to the SDK, and to verify compliance with the terms of this Agreement. OPTiM may use this information, as long as it is in a form that does not personally identify You, to improve the SDK, our products or to provide services or technologies to You and our customers.
+9.3 Assignment
+This Agreement may not be assigned, nor may any of Your obligations under this Agreement be delegated, in whole or in part, by You by operation of law, merger, or any other means without OPTiM’s express prior written consent and any attempted assignment without such consent will be null and void.
+9.4 Relationship of Parties
+This Agreement will not be construed as creating an agency, partnership, joint venture, fiduciary duty, or any other form of legal association between You and OPTiM, and You will not represent to the contrary, whether expressly, by implication, appearance or otherwise. This Agreement is not for the benefit of any third parties.
+9.5 Independent Development
+Nothing in this Agreement will impair OPTiM's right to develop, acquire, license, market, promote, or distribute products or technologies that perform the same or similar functions as, or otherwise compete with, Your Applications or any other products or technologies that You may develop, produce, market, or distribute.
+9.6 Notices
+Any notices relating to this Agreement shall be in writing. Notices will be deemed given by OPTiM when sent to You at the email address You provided as part of Your Registered OPTiM Developer sign-up process. Notices to OPTiM will be deemed given (a) when delivered personally, (b) three business days after having been sent by commercial overnight carrier with written proof of delivery, and (c) five business days after having been sent by first class or certified mail, postage prepaid, to this OPTiM address. You consent to receive notices by email and agree that any such notices that OPTiM sends You electronically will satisfy any legal communication requirements. A party may change its email or mailing address by giving the other written notice as described above.
+9.7 Severability
+If a court of competent jurisdiction finds any clause of this Agreement to be unenforceable for any reason, that clause of this Agreement shall be enforced to the maximum extent permissible so as to effect the intent of the parties, and the remainder of this Agreement shall continue in full force and effect. However, if applicable law prohibits or restricts You from fully and specifically complying with the Sections of this Agreement entitled "SDK Internal Use License and Restrictions" or "Your Obligations" or prevents the enforceability of either of those Sections, this Agreement will immediately terminate and You must immediately discontinue any use of the SDK as described in the Section entitled "Term and Termination."
+9.8 Waiver and Construction
+Failure by OPTiM to enforce any provision of this Agreement shall not be deemed a waiver of future enforcement of that or any other provision. Any laws or regulations that provide that the language of a contract will be construed against the drafter will not apply to this Agreement. Section headings are for convenience only and are not to be considered in construing or interpreting this Agreement.
+9.9 Dispute Resolution; Governing Law
+This Agreement shall be governed by the laws of Japan, without reference to its conflict of laws principles. All disputes arising out of this Agreement shall be subject to the exclusive jurisdiction and venue of the Tokyo District court, and You consent to the personal and exclusive jurisdiction of these courts. This Agreement shall not be governed by the United Nations Convention on the International Sale of Goods.
+9.10 Entire Agreement; Governing Language
+This Agreement constitutes the entire agreement between the parties with respect to the use of the SDK licensed hereunder and supersedes all prior understandings regarding such subject matter. This Agreement may be modified only: (a) by a written amendment signed by both parties, or (b) to the extent expressly permitted by this Agreement (for example, by OPTiM by written or email notice to You). Any translation of this Agreement is done for local requirements and in the event of a dispute between the English and any non-English version, the English version of this Agreement shall govern.
+
+
+
+Schedule A
+FOSS Licenses
+
+
+"Optimal In-App Remote SDK for iOS" uses following softwares.
+
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "libbzip2" software
+distributed under the following license:
+
+This program, "bzip2", the associated library "libbzip2", and all
+documentation, are copyright (C) 1996-2010 Julian R Seward.  All
+rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+2. The origin of this software must not be misrepresented; you must 
+   not claim that you wrote the original software.  If you use this 
+   software in a product, an acknowledgment in the product 
+   documentation would be appreciated but is not required.
+
+3. Altered source versions must be plainly marked as such, and must
+   not be misrepresented as being the original software.
+
+4. The name of the author may not be used to endorse or promote 
+   products derived from this software without specific prior written 
+   permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Julian Seward, jseward@bzip.org
+bzip2/libbzip2 version 1.0.6 of 6 September 2010
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "expat" software
+distributed under the following license:
+
+Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd
+                               and Clark Cooper
+Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat maintainers.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+--------------------------------------------------------------------------------
+This software is based in part on the work of the Independent JPEG Group.
+
+"Optimal In-App Remote SDK for iOS" uses the "libjpeg" software
+distributed under the following license:
+
+The authors make NO WARRANTY or representation, either express or implied,
+with respect to this software, its quality, accuracy, merchantability, or
+fitness for a particular purpose.  This software is provided "AS IS", and you,
+its user, assume the entire risk as to its quality and accuracy.
+
+This software is copyright (C) 1991-1998, Thomas G. Lane.
+All Rights Reserved except as specified below.
+
+Permission is hereby granted to use, copy, modify, and distribute this
+software (or portions thereof) for any purpose, without fee, subject to these
+conditions:
+(1) If any part of the source code for this software is distributed, then this
+README file must be included, with this copyright and no-warranty notice
+unaltered; and any additions, deletions, or changes to the original files
+must be clearly indicated in accompanying documentation.
+(2) If only executable code is distributed, then the accompanying
+documentation must state that "this software is based in part on the work of
+the Independent JPEG Group".
+(3) Permission for use of this software is granted only if the user accepts
+full responsibility for any undesirable consequences; the authors accept
+NO LIABILITY for damages of any kind.
+
+These conditions apply to any software derived from or based on the IJG code,
+not just to the unmodified library.  If you use our work, you ought to
+acknowledge us.
+
+Permission is NOT granted for the use of any IJG author's name or company name
+in advertising or publicity relating to this software or products derived from
+it.  This software may be referred to only as "the Independent JPEG Group's
+software".
+
+We specifically permit and encourage the use of this software as the basis of
+commercial products, provided that all warranty or liability claims are
+assumed by the product vendor.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "libjpeg-turbo" software
+distributed under the following license:
+
+Most of libjpeg-turbo inherits the non-restrictive, BSD-style license used by
+libjpeg (see README.)  The TurboJPEG wrapper (both C and Java versions) and
+associated test programs bear a similar license, which is reproduced below:
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+- Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+- Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+- Neither the name of the libjpeg-turbo Project nor the names of its
+  contributors may be used to endorse or promote products derived from this
+  software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS",
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "OpenSSL" software
+distributed under the following license:
+
+/* ====================================================================
+ * Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer. 
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. All advertising materials mentioning features or use of this
+ *    software must display the following acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+ *
+ * 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+ *    endorse or promote products derived from this software without
+ *    prior written permission. For written permission, please contact
+ *    openssl-core@openssl.org.
+ *
+ * 5. Products derived from this software may not be called "OpenSSL"
+ *    nor may "OpenSSL" appear in their names without prior written
+ *    permission of the OpenSSL Project.
+ *
+ * 6. Redistributions of any form whatsoever must retain the following
+ *    acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+ * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This product includes cryptographic software written by Eric Young
+ * (eay@cryptsoft.com).  This product includes software written by Tim
+ * Hudson (tjh@cryptsoft.com).
+ *
+ */
+
+ Original SSLeay License
+ -----------------------
+
+/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+ * All rights reserved.
+ *
+ * This package is an SSL implementation written
+ * by Eric Young (eay@cryptsoft.com).
+ * The implementation was written so as to conform with Netscapes SSL.
+ * 
+ * This library is free for commercial and non-commercial use as long as
+ * the following conditions are aheared to.  The following conditions
+ * apply to all code found in this distribution, be it the RC4, RSA,
+ * lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+ * included with this distribution is covered by the same copyright terms
+ * except that the holder is Tim Hudson (tjh@cryptsoft.com).
+ * 
+ * Copyright remains Eric Young's, and as such any Copyright notices in
+ * the code are not to be removed.
+ * If this package is used in a product, Eric Young should be given attribution
+ * as the author of the parts of the library used.
+ * This can be in the form of a textual message at program startup or
+ * in documentation (online or textual) provided with the package.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *    "This product includes cryptographic software written by
+ *     Eric Young (eay@cryptsoft.com)"
+ *    The word 'cryptographic' can be left out if the rouines from the library
+ *    being used are not cryptographic related :-).
+ * 4. If you include any Windows specific code (or a derivative thereof) from 
+ *    the apps directory (application code) you must include an acknowledgement:
+ *    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+ * 
+ * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * 
+ * The licence and distribution terms for any publically available version or
+ * derivative of this code cannot be changed.  i.e. this code cannot simply be
+ * copied and put under another distribution licence
+ * [including the GNU Public Licence.]
+ */
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "ICU" software
+distributed under the following license:
+
+ICU License - ICU 1.8.1 and later
+
+COPYRIGHT AND PERMISSION NOTICE
+
+Copyright (c) 1995-2010 International Business Machines Corporation and others
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, and/or sell
+copies of the Software, and to permit persons
+to whom the Software is furnished to do so, provided that the above
+copyright notice(s) and this permission notice appear in all copies
+of the Software and that both the above copyright notice(s) and this
+permission notice appear in supporting documentation.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY CLAIM,
+OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER
+RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Except as contained in this notice, the name of a copyright holder shall not be
+used in advertising or otherwise to promote the sale, use or other dealings in
+this Software without prior written authorization of the copyright holder.
+
+All trademarks and registered trademarks mentioned herein are the property of
+their respective owners.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "libSRTP" software
+distributed under the following license:
+
+/*
+ *	
+ * Copyright (c) 2001-2006 Cisco Systems, Inc.
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 
+ *   Redistributions of source code must retain the above copyright
+ *   notice, this list of conditions and the following disclaimer.
+ * 
+ *   Redistributions in binary form must reproduce the above
+ *   copyright notice, this list of conditions and the following
+ *   disclaimer in the documentation and/or other materials provided
+ *   with the distribution.
+ * 
+ *   Neither the name of the Cisco Systems, Inc. nor the names of its
+ *   contributors may be used to endorse or promote products derived
+ *   from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "libvpx" software
+distributed under the following license:
+
+Copyright (c) 2010, The WebM Project authors. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+  * Neither the name of Google, nor the WebM Project, nor the names
+    of its contributors may be used to endorse or promote products
+    derived from this software without specific prior written
+    permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "LibYuv" software
+distributed under the following license:
+
+Copyright 2011 The LibYuv Project Authors. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+  * Neither the name of Google nor the names of its contributors may
+    be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "Network Security Services" software
+distributed under the following license:
+
+This Source Code Form is subject to the terms of
+the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed
+with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+You can get source code from here:
+http://src.chromium.org/svn/trunk/src/net/third_party/nss/
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "Opus" software
+distributed under the following license:
+
+Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
+                    Jean-Marc Valin, Timothy B. Terriberry,
+                    CSIRO, Gregory Maxwell, Mark Borgerding,
+                    Erik de Castro Lopo
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+- Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+- Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+- Neither the name of Internet Society, IETF or IETF Trust, nor the
+names of specific contributors, may be used to endorse or promote
+products derived from this software without specific prior written
+permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Opus is subject to the royalty-free patent licenses which are
+specified at:
+
+Xiph.Org Foundation:
+https://datatracker.ietf.org/ipr/1524/
+
+Microsoft Corporation:
+https://datatracker.ietf.org/ipr/1914/
+
+Broadcom Corporation:
+https://datatracker.ietf.org/ipr/1526/
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "Protocol Buffers" software
+distributed under the following license:
+
+Copyright 2008, Google Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+    * Neither the name of Google Inc. nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Code generated by the Protocol Buffer compiler is owned by the owner
+of the input file used when generating it.  This code is not
+standalone and requires a support library to be linked with it.  This
+support library is itself covered by the above license.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "sctp-refimpl" software
+distributed under the following license:
+
+Copyright (c) 2001, 2002 Cisco Systems, Inc.
+Copyright (c) 2002-12 Randall R. Stewart
+Copyright (c) 2002-12 Michael Tuexen
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+"Optimal In-App Remote SDK for iOS" uses the "WebRTC" software
+distributed under the following license:
+
+Copyright (c) 2011, The WebRTC project authors. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+  * Neither the name of Google nor the names of its contributors may
+    be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
