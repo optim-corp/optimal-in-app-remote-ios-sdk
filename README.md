@@ -44,6 +44,8 @@ Before starting with the procedure below, register as a developer and make sure 
 ### 0. Run checkout on the following git repository.
 When downloaded as a ZIP file, files contained in "OptimalRemote.framework" lose structure and becomes invalid. Make sure to use Git repository instead and run checkout.
 
+Next, unzip "OptimalRemote.framework.zip" in the directory that you checked out.
+
 ### 1. Add "OptimalRemote.framework" directory to your project.
 "OptimalRemote.framework" directory contains a set of header files and static library files. Follow the instructions below to add "OptimalRemote.framework" contained in the Git repository to your project.
 
@@ -61,9 +63,11 @@ To successfully build apps with SDK features, following Framework links need to 
  2. AudioToolbox.framework
  3. AVFoundation.framework
  4. CoreMedia.framework
- 5. SystemConfiguration.framework
- 6. Security.framework
- 7. libsqlite3.dylib
+ 5. CoreVideo.framework
+ 6. OpenGLES.framework
+ 7. SystemConfiguration.framework
+ 8. Security.framework
+ 9. libsqlite3.dylib
 
 Follow instructions below to add Framework links to your project.
 
@@ -73,8 +77,6 @@ Follow instructions below to add Framework links to your project.
 Because SDK utilizes category classes, you need to add "-ObjC" linker flags before building your project. Or you can add "-lc++ -lstdc++" before building. Follow instructions below to add linker flags to your project.
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
-
-In the Xcode Build Settings, set "Architectures" and "Valid Architectures" so that they only contain "armv7" setting.
 
 ## Tutorials for using SDK
 Following describes sets of codes frequently used in apps utilizing this SDK.

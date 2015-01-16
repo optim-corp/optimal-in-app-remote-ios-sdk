@@ -44,6 +44,8 @@ SDK を組み込んだアプリの画面にオペレーターから指マーク�
 ### 0. この Git レポジトリをチェックアウトする
 ZIP としてダウンロードすると OptimalRemote.framework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
 
+次にチェックアウトしたディレクトリにある「OptimalRemote.framework.zip」を解凍してください。
+
 ### 1. OptimalRemote.framework ディレクトリをプロジェクトに追加する
 OptimalRemote.framework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.framework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.framework ディレクトリを以下を参考に追加してください。
 
@@ -61,9 +63,11 @@ SDK を利用したアプリをビルドするには、以下の Framework へ�
  2. AudioToolbox.framework
  3. AVFoundation.framework
  4. CoreMedia.framework
- 5. SystemConfiguration.framework
- 6. Security.framework
- 7. libsqlite3.dylib
+ 5. CoreVideo.framework
+ 6. OpenGLES.framework
+ 7. SystemConfiguration.framework
+ 8. Security.framework
+ 9. libsqlite3.dylib
 
 Framework へのリンクを追加するには以下を参考にしてください。
 
@@ -73,8 +77,6 @@ Framework へのリンクを追加するには以下を参考にしてくださ�
 SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++」を追加してビルドする必要があります。リンカフラグをを追加するには以下を参考にしてください。
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
-
-次に「Architectures」「Valid Architectures」を「armv7」のみにしてください。
 
 ## SDK の利用するためのチュートリアル
 SDK を利用するには、いくらかお決まりのコードを記述する必要があります。
