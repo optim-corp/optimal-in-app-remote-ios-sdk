@@ -178,9 +178,39 @@ In this tutorial, the derived class of "UIViewController" class has  "UIButton" 
 ...
 ```
 
+### 4. Configure App Transport Security
+"optim.co.jp" and its subdomains must be set as an exception to App Transport Security (ATS), which as added in iOS 9.
+
+For the next setup, avoid interruptions of SDK communications by ATS.
+Add the ATS settings to the "plist" element of "Info.plist."
+
+```Info.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+...
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>optim.co.jp</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+...
+</dict>
+</plist>
+```
+
 This will complete the preparations to be made on iOS application side.
 
-### 4. Connecting to the Operator Tool
+### 5. Connecting to the Operator Tool
 After building your app, run the app from the device with access to the Internet. Tap `helpMeButton` to display "Receipt Number". Enter this Receipt Number from Operator Tool. Operator Tool and App is connected and app screen  is displayed on Operator Tool. Now you are ready to go!
 
 This completes the tutorial for SDK. Please contact us if you experience problems connecting to the Operator Tool.

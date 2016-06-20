@@ -36,3 +36,12 @@
 
 ### ヘッドフォンがない場合にスピーカーから音声を出力するようにする
 ヘッドフォンがない場合にスピーカーから音声を出力するようにしたい場合、`ORIASession` クラスのインスタンスを作成した直後に `voiceChatOverridesSpeakerWhenNoHeadphones` プロパティを `YES` にしてください。ヘッドフォンを接続すると、スピーカーから音声を出力するように設定していてもヘッドフォンから音声を出力するようになりますが、ユーザーがメニューからスピーカーから音声を出力するように設定した場合はその限りではありません。
+
+## WKWebView の画面共有
+iOS 8 以降で WKWebView の表示画面を画面共有したい場合、 `ORIASession` クラスのインスタンスを作成した直後に `screenSharingBestEffortCaptureEnabled` プロパティを `YES` にしてください。
+
+### ソースコード例
+
+```objectivec
+self.session.screenSharingBestEffortCaptureEnabled = [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0;
+```

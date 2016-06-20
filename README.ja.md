@@ -74,7 +74,7 @@ Framework へのリンクを追加するには以下を参考にしてくださ�
  - [Project Editor Help: Linking to a Library or Framework](https://developer.apple.com/library/ios/recipes/xcode_help-project_editor/Articles/AddingaLibrarytoaTarget.html)
 
 ### 4. SDK に必要なリンカフラグを追加する
-SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++」を追加してビルドする必要があります。リンカフラグをを追加するには以下を参考にしてください。
+SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++」を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
 
@@ -178,9 +178,39 @@ SDK が表示する画面は、keyWindow とは別のウィンドウに表示さ
 ...
 ```
 
+### 4. App Transport Securityを設定する
+iOS 9 から追加された App Transport Security(ATS) へ optim.co.jp とそのサブドメインを例外として設定する必要があります。
+
+次の設定を行うことで SDK の通信が ATS によって中断されることを回避します。
+Info.plist の plist 要素へ ATS の設定を追加してください。
+
+```Info.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+...
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>optim.co.jp</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+...
+</dict>
+</plist>
+```
+
 これで iOS アプリ側の準備は完了です。
 
-### 4. オペレーターツールと接続する
+### 5. オペレーターツールと接続する
 アプリをビルドしたら、インターネットに接続された端末でアプリを実行し、`helpMeButton` をタップすると「受付番号」が表示されます。オペレーターツールでこの受付番号を入力すると、オペレーターツールとアプリが接続され、オペレーターツールにアプリの画面が表示されます！
 
 以上でチュートリアルは完了です。うまくオペレーターツールと接続できない場合、お問い合わせください。

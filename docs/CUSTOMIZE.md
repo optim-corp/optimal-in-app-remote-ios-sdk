@@ -36,3 +36,12 @@ If voice call  with remote operator needs to be allowed , set "voiceChatEnabled"
 
 ### Output audio from the speakers when no headphone is connected.
 If audio needs to be output from the speakers when no headphone is connected, set  "voiceChatOverridesSpeakerWhenNoHeadphones" property to "YES" immediately after creating "ORIASession" class instance. Even when this option is set to "YES", sound will be output from headphones when the headphone is connected to the device. However, sound is output from the speakers if device user has selected option to output voice call audio from the speakers.
+
+## Enabling screen sharing for WKWebView
+If WKWebView needs to be enabled screen capturing on iOS 8 or later, set "screenSharingBestEffortCaptureEnabled" property to "YES" immediately after creating "ORIASession" class instance.
+
+### Source code example
+
+```objectivec
+self.session.screenSharingBestEffortCaptureEnabled = [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0;
+```
