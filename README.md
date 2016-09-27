@@ -7,7 +7,7 @@ Android version of SDK is also available soon.
 
 ##Operating environment
  - Operating Environment for app
-     1. iOS 6 or later
+     1. iOS 6 - iOS 10
      2. iPhone or iPad running on operating system above are supported.
      3. English / Japanese environment
          - UIs will be displayed in English for languages not listed above.
@@ -67,7 +67,8 @@ To successfully build apps with SDK features, following Framework links need to 
  6. OpenGLES.framework
  7. SystemConfiguration.framework
  8. Security.framework
- 9. libsqlite3.dylib
+ 9. VideoToolbox.framework
+ 10. libsqlite3.dylib
 
 Follow instructions below to add Framework links to your project.
 

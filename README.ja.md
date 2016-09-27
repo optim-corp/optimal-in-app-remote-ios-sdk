@@ -7,7 +7,7 @@ Android 版 SDK も近日中に対応予定です。
 
 ## 対象環境
  - アプリ動作環境
-     1. iOS 6 以降
+     1. iOS 6 〜 iOS 10
      2. 上記 OS で動作している iPhone または iPad
      3. 英語、日本語
          - 上記以外の言語環境では英語表記になります
@@ -67,7 +67,8 @@ SDK を利用したアプリをビルドするには、以下の Framework へ�
  6. OpenGLES.framework
  7. SystemConfiguration.framework
  8. Security.framework
- 9. libsqlite3.dylib
+ 9. VideoToolbox.framework
+ 10. libsqlite3.dylib
 
 Framework へのリンクを追加するには以下を参考にしてください。
 
