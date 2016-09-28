@@ -67,8 +67,7 @@ SDK を利用したアプリをビルドするには、以下の Framework へ�
  6. OpenGLES.framework
  7. SystemConfiguration.framework
  8. Security.framework
- 9. VideoToolbox.framework
- 10. libsqlite3.dylib
+ 9. libsqlite3.dylib
 
 Framework へのリンクを追加するには以下を参考にしてください。
 

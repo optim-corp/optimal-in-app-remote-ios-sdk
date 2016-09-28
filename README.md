@@ -67,8 +67,7 @@ To successfully build apps with SDK features, following Framework links need to 
  6. OpenGLES.framework
  7. SystemConfiguration.framework
  8. Security.framework
- 9. VideoToolbox.framework
- 10. libsqlite3.dylib
+ 9. libsqlite3.dylib
 
 Follow instructions below to add Framework links to your project.
 
