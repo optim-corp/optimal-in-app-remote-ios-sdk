@@ -7,7 +7,7 @@ Android version of SDK is also available soon.
 
 ##Operating environment
  - Operating Environment for app
-     1. iOS 6 - iOS 10
+     1. iOS 6 - iOS 11
      2. iPhone or iPad running on operating system above are supported.
      3. English / Japanese environment
          - UIs will be displayed in English for languages not listed above.
