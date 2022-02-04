@@ -7,13 +7,13 @@ Android 版 SDK も近日中に対応予定です。
 
 ## 対象環境
  - アプリ動作環境
-     1. iOS 6 〜 iOS 11
+     1. iOS 9 〜 iOS 15
      2. 上記 OS で動作している iPhone または iPad
      3. 英語、日本語
          - 上記以外の言語環境では英語表記になります
      4. インターネットに接続できるネットワーク環境
  - 開発環境
-     1. Xcode 6.1 以降
+     1. Xcode 7.0 以降
 
 ## この SDK でできること
 
@@ -44,17 +44,16 @@ SDK を組み込んだアプリの画面にオペレーターから指マーク�
 ### 0. この Git レポジトリをチェックアウトする
 ZIP としてダウンロードすると OptimalRemote.framework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
 
-次にチェックアウトしたディレクトリにある「OptimalRemote.framework.zip」を解凍してください。
-
 ### 1. OptimalRemote.framework ディレクトリをプロジェクトに追加する
 OptimalRemote.framework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.framework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.framework ディレクトリを以下を参考に追加してください。
 
+ - [Embedding Frameworks In An App : Embedding a Framework in iOS, macOS, watchOS, and tvOS Apps](https://developer.apple.com/library/archive/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-EMBED_IN_APP_SECTION)
  - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
 
 ### 2. OptimalRemoteResources ディレクトリ をプロジェクトに追加する
 OptimalRemoteResources ディレクトリには、SDK を利用するのに必要な文字列ファイル・画像ファイル一式が含まれています。OptimalRemoteResources ディレクトリをプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemoteResources ディレクトリを以下を参考に追加してください。
 
- - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
+ - [Managing Files and Folders in Your Xcode Project: Add Existing Files and Folders to a Project](https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project)
 
 ### 3. SDK に必要な Framework へのリンクを追加する
 SDK を利用したアプリをビルドするには、以下の Framework へのリンクを追加する必要があります。
@@ -67,11 +66,7 @@ SDK を利用したアプリをビルドするには、以下の Framework へ�
  6. OpenGLES.framework
  7. SystemConfiguration.framework
  8. Security.framework
- 9. libsqlite3.dylib
-
-Framework へのリンクを追加するには以下を参考にしてください。
-
- - [Project Editor Help: Linking to a Library or Framework](https://developer.apple.com/library/ios/recipes/xcode_help-project_editor/Articles/AddingaLibrarytoaTarget.html)
+ 9. libsqlite3.tbd
 
 ### 4. SDK に必要なリンカフラグを追加する
 SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++」を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
@@ -86,7 +81,7 @@ SDK を利用するには、いくらかお決まりのコードを記述する�
 
 SDK が表示する画面は、keyWindow とは別のウィンドウに表示されます。そのため、端末の画面対応に手動で対応する必要があります。
 
-`UIApplicationDelegate` プロトコルの `application:willChangeStatusBarOrientation:duration:` メソッドに以下のようにコードを追加することで対応することができます。
+App-Based Life-Cycle のアプリの場合、`UIApplicationDelegate` プロトコルの `application:willChangeStatusBarOrientation:duration:` メソッドに以下のようにコードを追加することで対応することができます。
 
 ```XxxAppDelegate.m
 ...
@@ -102,6 +97,28 @@ SDK が表示する画面は、keyWindow とは別のウィンドウに表示さ
 }
 ...
 ```
+
+Scene-Based Life-Cycle のアプリの場合、`UIWindowSceneDelegate` プロトコルの `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` メソッドに以下のようにコードを追加することで対応することができます。
+
+```XxxSceneDelegate.m
+...
+// 1. SDK を利用するためのヘッダをインポートする
+#import "OptimalRemote/OptimalRemote.h"
+...
+
+- (void)windowScene:(UIWindowScene *)windowScene
+    didUpdateCoordinateSpace:(id<UICoordinateSpace>)previousCoordinateSpace
+    interfaceOrientation:(UIInterfaceOrientation)previousInterfaceOrientation
+    traitCollection:(UITraitCollection *)previousTraitCollection {
+    ...
+    // 2. 画面が回転した時に SDK が表示する画面を回転させる
+    [ORIAWindow setOrientation:[windowScene interfaceOrientation] withDuration:0];
+}
+...
+```
+
+App-Based Life-Cycle や Scene-Based Life-Cycle については以下を参考にしてください。
+- [Managing Your App's Life Cycle](https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle?language=objc)
 
 ### 2. ORIASession クラスのインスタンスを作る
 ここでは例として、`UIViewController` クラスの派生クラスの `viewDidLoad` メソッドで `ORIASession` クラスのインスタンスを作ります。`ORIASession` クラスは、SDK で iOS アプリの遠隔支援を実現するためのコアクラスのひとつです。
@@ -222,6 +239,6 @@ iOS 11 にて UIAlertView を用いたダイアログ表示を行うと以下の
 UIAlertView は iOS 8 以降は非推奨となっているモジュールで、ダイアログの表示には UIAlertController を用いることが推奨されています。
 [UIAlertView](https://developer.apple.com/documentation/uikit/uialertview)
 
-ですので iOS 11 に対応される場合には、ダイアログ表示には UIAlertController を使用し、 iOS 8 未満にも対応される場合には必要に応じて分岐の処理を実装いただけますようお願い致します。
+ですので iOS 11 に対応される場合には、ダイアログ表示には UIAlertController を使用し、 iOS 11 未満にも対応される場合には必要に応じて分岐の処理を実装いただけますようお願い致します。
 
 以上でチュートリアルは完了です。うまくオペレーターツールと接続できない場合、お問い合わせください。

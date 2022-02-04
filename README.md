@@ -7,13 +7,13 @@ Android version of SDK is also available soon.
 
 ##Operating environment
  - Operating Environment for app
-     1. iOS 6 - iOS 11
+     1. iOS 9 - iOS 15
      2. iPhone or iPad running on operating system above are supported.
      3. English / Japanese environment
          - UIs will be displayed in English for languages not listed above.
      4. Access to the Internet is required.
  - Required development environment
-     1. Xcode 6.1 or later
+     1. Xcode 7.0 or later
 
 ## SDK features
 
@@ -44,17 +44,17 @@ Before starting with the procedure below, register as a developer and make sure 
 ### 0. Run checkout on the following git repository.
 When downloaded as a ZIP file, files contained in "OptimalRemote.framework" lose structure and becomes invalid. Make sure to use Git repository instead and run checkout.
 
-Next, unzip "OptimalRemote.framework.zip" in the directory that you checked out.
-
 ### 1. Add "OptimalRemote.framework" directory to your project.
 "OptimalRemote.framework" directory contains a set of header files and static library files. Follow the instructions below to add "OptimalRemote.framework" contained in the Git repository to your project.
 
+ - [Embedding Frameworks In An App : Embedding a Framework in iOS, macOS, watchOS, and tvOS Apps](https://developer.apple.com/library/archive/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-EMBED_IN_APP_SECTION)
  - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
 
 ### 2. Add "OptimalRemoteResources" directory to your project.
 "OptimalRemoteResources" directory contains a set of text and image files required to use this SDK. Follow the instructions below to add "OptimalRemoteResources" contained in the Git repository to your project.
 
- - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
+ - [Managing Files and Folders in Your Xcode Project: Add Existing Files and Folders to a Project](https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project)
+
 
 ### 3. Adding Framework links required by SDK
 To successfully build apps with SDK features, following Framework links need to be added to your project.
@@ -67,11 +67,8 @@ To successfully build apps with SDK features, following Framework links need to 
  6. OpenGLES.framework
  7. SystemConfiguration.framework
  8. Security.framework
- 9. libsqlite3.dylib
+ 9. libsqlite3.dytbd
 
-Follow instructions below to add Framework links to your project.
-
- - [Project Editor Help: Linking to a Library or Framework](https://developer.apple.com/library/ios/recipes/xcode_help-project_editor/Articles/AddingaLibrarytoaTarget.html)
 
 ### 4. Adding linker flags required for SDK
 Because SDK utilizes category classes, you need to add "-ObjC" linker flags before building your project. Or you can add "-lc++ -lstdc++" before building. Follow instructions below to add linker flags to your project.
@@ -86,7 +83,7 @@ Following code is not necessary if your app does not support screen rotation.
 
 Screen displayed by SDK is displayed in window that is not "keyWindow". Therefore, device's screen rotation needs to be implemented separately.
 
-Insert following codes to `application:willChangeStatusBarOrientation:duration:` method in `UIApplicationDelegate` protocol.
+In the case of App-Based Life-Cycle apps, insert following codes to `application:willChangeStatusBarOrientation:duration:` method in `UIApplicationDelegate` protocol.
 
 ```XxxAppDelegate.m
 ...
@@ -102,6 +99,31 @@ Insert following codes to `application:willChangeStatusBarOrientation:duration:`
 }
 ...
 ```
+
+In the case of a Scene-Based Life-Cycle app, the following code can be added to the `UIWindowSceneDelegate` protocol's For apps with `UIWindowSceneDelegate` protocol, you can add the following code to the `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` method.
+
+
+```XxxSceneDelegate.m
+...
+// 1. Importing headers required for SDK.
+#import "OptimalRemote/OptimalRemote.h"
+...
+
+- (void)windowScene:(UIWindowScene *)windowScene
+    didUpdateCoordinateSpace:(id<UICoordinateSpace>)previousCoordinateSpace
+    interfaceOrientation:(UIInterfaceOrientation)previousInterfaceOrientation
+    traitCollection:(UITraitCollection *)previousTraitCollection {
+    ...
+    // 2. When devices are rotated, rotate the screen displayed by SDK.
+    [ORIAWindow setOrientation:[windowScene interfaceOrientation] withDuration:0];
+}
+...
+```
+
+
+For more information about App-Based Life-Cycle and Scene-Based Life-Cycle, please refer to the following.
+- [Managing Your App's Life Cycle](https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle?language=objc)
+
 
 ### 2. Create an instance of "ORIASession" class.
 For this tutorial, instance of "ORIASession" class is created using `viewDidLoad` method derived from `UIViewController` class. "ORIASession" class is one of SDK's core classes for implementing iOS app remote support.
@@ -214,3 +236,17 @@ This will complete the preparations to be made on iOS application side.
 After building your app, run the app from the device with access to the Internet. Tap `helpMeButton` to display "Receipt Number". Enter this Receipt Number from Operator Tool. Operator Tool and App is connected and app screen  is displayed on Operator Tool. Now you are ready to go!
 
 This completes the tutorial for SDK. Please contact us if you experience problems connecting to the Operator Tool.
+
+
+### 6. Support for iOS 11 and later
+The following issue occurs when displaying a dialog using UIAlertView on iOS 11 or later.
+ - The disconnect confirmation dialog is not displayed. As a result, disconnection from the device cannot be performed.
+ - When remote control is requested from the operator tool, the remote control permission dialog will not be displayed. As a result, remote control cannot be performed.
+
+The cause is that the keyWindow setting was unintentionally changed, which caused the above event.
+UIAlertView is a deprecated module since iOS 8, and it is recommended to use UIAlertController to display dialogs.
+[UIAlertView](https://developer.apple.com/documentation/uikit/uialertview)
+
+Therefore, if you plan to support iOS 11, please use UIAlertController for displaying dialogs, and implement branching processes as necessary if you plan to support versions of iOS less than 11.
+
+This completes the tutorial. If you cannot connect to the operator tool successfully, please contact us.
