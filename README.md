@@ -3,17 +3,15 @@
 "Optimal In-App Remote SDK for iOS" is a developer kit that provides remote assistance features for your iOS app.
 By incorporating this SDK into your iOS application, you can provide remote assistance for your app using [Optimal Remote](http://en.optim.co.jp/contents/5480).
 
-Android version of SDK is also available soon.
-
 ##Operating environment
  - Operating Environment for app
-     1. iOS 9 - iOS 15
+     1. iOS 11 - iOS 16
      2. iPhone or iPad running on operating system above are supported.
      3. English / Japanese environment
          - UIs will be displayed in English for languages not listed above.
      4. Access to the Internet is required.
  - Required development environment
-     1. Xcode 7.0 or later
+     1. Xcode 14.0 or later
 
 ## SDK features
 

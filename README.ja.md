@@ -3,17 +3,15 @@
 Optimal In-App Remote SDK for iOS は、iOS アプリの遠隔支援を実現するための開発キットです。
 この SDK をアプリに組み込むことで、そのアプリを [Optimal Remote](http://www.optim.co.jp/products-detail/top/40) で遠隔支援できるようになります。
 
-Android 版 SDK も近日中に対応予定です。
-
 ## 対象環境
  - アプリ動作環境
-     1. iOS 9 〜 iOS 15
+     1. iOS 11 〜 iOS 16
      2. 上記 OS で動作している iPhone または iPad
      3. 英語、日本語
          - 上記以外の言語環境では英語表記になります
      4. インターネットに接続できるネットワーク環境
  - 開発環境
-     1. Xcode 7.0 以降
+     1. Xcode 14.0 以降
 
 ## この SDK でできること
 
