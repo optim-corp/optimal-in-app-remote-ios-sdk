@@ -5,13 +5,13 @@ Optimal In-App Remote SDK for iOS は、iOS アプリの遠隔支援を実現す
 
 ## 対象環境
  - アプリ動作環境
-     1. iOS 11 〜 iOS 16
+     1. iOS 12 〜 iOS 17
      2. 上記 OS で動作している iPhone または iPad
      3. 英語、日本語
          - 上記以外の言語環境では英語表記になります
      4. インターネットに接続できるネットワーク環境
  - 開発環境
-     1. Xcode 14.0 以降
+     1. Xcode 15.0 以降
 
 ## この SDK でできること
 
@@ -223,13 +223,31 @@ Info.plist の plist 要素へ ATS の設定を追加してください。
 </plist>
 ```
 
+### 5. Background Modesを設定する
+次の設定を行うことで、iOS アプリがバックグラウンド時に VoIP が切断されることを回避します。
+Info.plist の plist 要素へ Background Modes の設定を追加してください。
+```Info.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+...
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+    </array>
+...
+</dict>
+</plist>
+```
+
 これで iOS アプリ側の準備は完了です。
 
-### 5. オペレーターツールと接続する
+### 6. オペレーターツールと接続する
 アプリをビルドしたら、インターネットに接続された端末でアプリを実行し、`helpMeButton` をタップすると「受付番号」が表示されます。オペレーターツールでこの受付番号を入力すると、オペレーターツールとアプリが接続され、オペレーターツールにアプリの画面が表示されます！
 
-### 6. iOS 11 の対応について
-iOS 11 にて UIAlertView を用いたダイアログ表示を行うと以下の事象が発生します。
+### 7. iOS 11 以上の対応について
+iOS 11 以上にて UIAlertView を用いたダイアログ表示を行うと以下の事象が発生します。
  - 切断確認ダイアログが表示されない。これに伴い、端末から切断が行えない。
  - オペレーターツールから遠隔操作をリクエストした場合に、遠隔操作許可ダイアログが表示されない。これに伴い、遠隔操作が行えない。
 
@@ -237,6 +255,6 @@ iOS 11 にて UIAlertView を用いたダイアログ表示を行うと以下の
 UIAlertView は iOS 8 以降は非推奨となっているモジュールで、ダイアログの表示には UIAlertController を用いることが推奨されています。
 [UIAlertView](https://developer.apple.com/documentation/uikit/uialertview)
 
-ですので iOS 11 に対応される場合には、ダイアログ表示には UIAlertController を使用し、 iOS 11 未満にも対応される場合には必要に応じて分岐の処理を実装いただけますようお願い致します。
+ですので iOS 11 以上に対応される場合には、ダイアログ表示には UIAlertController を使用し、 iOS 11 未満にも対応される場合には必要に応じて分岐の処理を実装いただけますようお願い致します。
 
 以上でチュートリアルは完了です。うまくオペレーターツールと接続できない場合、お問い合わせください。
