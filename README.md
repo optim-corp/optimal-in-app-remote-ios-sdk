@@ -57,19 +57,18 @@ When downloaded as a ZIP file, files contained in "OptimalRemote.framework" lose
 ### 3. Adding Framework links required by SDK
 To successfully build apps with SDK features, following Framework links need to be added to your project.
 
- 1. AssetsLibrary.framework
- 2. AudioToolbox.framework
- 3. AVFoundation.framework
- 4. CoreMedia.framework
- 5. CoreVideo.framework
- 6. OpenGLES.framework
- 7. SystemConfiguration.framework
- 8. Security.framework
- 9. libsqlite3.dytbd
+ 1. AudioToolbox.framework
+ 2. AVFoundation.framework
+ 3. CoreMedia.framework
+ 4. CoreVideo.framework
+ 5. OpenGLES.framework
+ 6. SystemConfiguration.framework
+ 7. Security.framework
+ 8. libsqlite3.tbd
 
 
 ### 4. Adding linker flags required for SDK
-Because SDK utilizes category classes, you need to add "-ObjC" linker flags before building your project. Or you can add "-lc++ -lstdc++" before building. Follow instructions below to add linker flags to your project.
+Because SDK utilizes category classes, you need to add `-ObjC` linker flags before building your project. And you need to add `-lc++ -lstdc++` before building. Follow instructions below to add linker flags to your project.
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
 
@@ -83,7 +82,7 @@ Screen displayed by SDK is displayed in window that is not "keyWindow". Therefor
 
 In the case of App-Based Life-Cycle apps, insert following codes to `application:willChangeStatusBarOrientation:duration:` method in `UIApplicationDelegate` protocol.
 
-```XxxAppDelegate.m
+```objc
 ...
 // 1. Importing headers required for SDK.
 #import "OptimalRemote/OptimalRemote.h"
@@ -101,7 +100,7 @@ In the case of App-Based Life-Cycle apps, insert following codes to `application
 In the case of a Scene-Based Life-Cycle app, the following code can be added to the `UIWindowSceneDelegate` protocol's For apps with `UIWindowSceneDelegate` protocol, you can add the following code to the `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` method.
 
 
-```XxxSceneDelegate.m
+```objc
 ...
 // 1. Importing headers required for SDK.
 #import "OptimalRemote/OptimalRemote.h"
@@ -126,12 +125,12 @@ For more information about App-Based Life-Cycle and Scene-Based Life-Cycle, plea
 ### 2. Create an instance of "ORIASession" class.
 For this tutorial, instance of "ORIASession" class is created using `viewDidLoad` method derived from `UIViewController` class. "ORIASession" class is one of SDK's core classes for implementing iOS app remote support.
 
-```XxxViewController.m
+```objc
 ...
 // 3. Importing headers required for SDK.
 #import "OptimalRemote/OptimalRemote.h"
 ...
-// 4. 
+// 4.
 @interface XxxViewController () <ORIASessionControllerAppDelegate>
 ...
 // 5. Add "ORIASession" control class to the property.
@@ -167,7 +166,7 @@ For this tutorial, instance of "ORIASession" class is created using `viewDidLoad
 ### 3. Start "ORIASession" when the button is tapped.
 In this tutorial, the derived class of "UIViewController" class has  "UIButton" class property "helpMeButton".  We insert following codes so that "ORIASession"  is initiated when this button is tapped.
 
-```XxxViewController.m
+```objc
 ...
 // 11. Method for initiating "ORIASession"
 - (void)controllerDidOpen:(ORIASessionController *)controller {
@@ -204,7 +203,7 @@ In this tutorial, the derived class of "UIViewController" class has  "UIButton" 
 For the next setup, avoid interruptions of SDK communications by ATS.
 Add the ATS settings to the "plist" element of "Info.plist."
 
-```Info.plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -230,13 +229,32 @@ Add the ATS settings to the "plist" element of "Info.plist."
 
 This will complete the preparations to be made on iOS application side.
 
-### 5. Connecting to the Operator Tool
+### 5. Set Background Modes
+Please add Background Modes settings to the "plist" element of "Info.plist".
+This prevents VoIP from disconnecting when the application is running in the background.
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+...
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+    </array>
+...
+</dict>
+</plist>
+```
+This will complete the preparations to be made on iOS application side.
+
+### 6. Connecting to the Operator Tool
 After building your app, run the app from the device with access to the Internet. Tap `helpMeButton` to display "Receipt Number". Enter this Receipt Number from Operator Tool. Operator Tool and App is connected and app screen  is displayed on Operator Tool. Now you are ready to go!
 
 This completes the tutorial for SDK. Please contact us if you experience problems connecting to the Operator Tool.
 
 
-### 6. Support for iOS 11 and later
+### 7. Support for iOS 11 and later
 The following issue occurs when displaying a dialog using UIAlertView on iOS 11 or later.
  - The disconnect confirmation dialog is not displayed. As a result, disconnection from the device cannot be performed.
  - When remote control is requested from the operator tool, the remote control permission dialog will not be displayed. As a result, remote control cannot be performed.
@@ -248,3 +266,56 @@ UIAlertView is a deprecated module since iOS 8, and it is recommended to use UIA
 Therefore, if you plan to support iOS 11, please use UIAlertController for displaying dialogs, and implement branching processes as necessary if you plan to support versions of iOS less than 11.
 
 This completes the tutorial. If you cannot connect to the operator tool successfully, please contact us.
+
+### 8. Configure Privacy Manifest
+Starting in spring 2024, if your new app or app update submission to the App Store, you’ll need to include the privacy manifest for the SDK.
+Please refer to the following documents for more information on privacy manifests.
+
+- [Privacy manifest files](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files)
+
+The SDK includes the privacy manifest (PrivacyInfo.xcprivacy), but we have confirmed that apps incorporating the SDK do not include the SDK's privacy manifest.
+
+Therefore, please include the following items in the privacy manifest of your application.
+
+#### NSPrivacyTracking
+A Boolean that indicates whether your app or third-party SDK uses data for tracking as defined under the App Tracking Transparency framework.
+
+In the SDK, NO (false) because the data is not used for tracking.
+
+#### NSPrivacyTrackingDomains
+An array of strings that lists the internet domains your app or third-party SDK connects to that engage in tracking.
+
+Empty because it is not tracked by the SDK.
+
+#### NSPrivacyCollectedDataTypes
+An array of dictionaries that describes the data types your app or third-party SDK collects.
+
+The SDK collects the following data.
+See [Describing data use in privacy manifests](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests) for the following keys and values.
+
+| NSPrivacyCollectedDataType | NSPrivacyCollectedDataTypeLinked |NSPrivacyCollectedDataTypeTracking |NSPrivacyCollectedDataTypePurposes |
+|---|---|---|---|
+| NSPrivacyCollectedDataTypeAudioData | false | false | NSPrivacyCollectedDataTypePurposeAppFunctionality |
+| NSPrivacyCollectedDataTypeCustomerSupport | false | false | NSPrivacyCollectedDataTypePurposeAppFunctionality |
+
+#### NSPrivacyAccessedAPITypes
+An array of dictionaries that describe the API types your app or third-party SDK accesses that have been designated as APIs that require reasons to access.
+
+The SDK accesses the following API types.See [Describing use of required reason API](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api)  for the following keys and values.
+
+| NSPrivacyAccessedAPIType | NSPrivacyAccessedAPITypeReasons |
+|---|---|
+| NSPrivacyAccessedAPICategoryUserDefaults | CA92.1 |
+| NSPrivacyAccessedAPICategoryFileTimestamp | C617.1 |
+| NSPrivacyAccessedAPICategorySystemBootTime | 35F9.1 |
+| NSPrivacyAccessedAPICategoryDiskSpace | E174.1 |
+
+### 9. App Privacy on App Store Connect
+This information about your app’s privacy practices, including the practices of third-party partners whose code you integrate into your app, is required to submit new apps and app updates to the App Store.
+
+When submitting your app, please describe the following "Types of data" and "Data use".
+
+| Types of data | Data use |
+|---|---|
+| Audio Data | App Functionality |
+| Customer Support | App Functionality |
