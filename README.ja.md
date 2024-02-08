@@ -67,13 +67,9 @@ SDK を利用したアプリをビルドするには、以下の Framework へ�
  9. libsqlite3.tbd
 
 ### 4. SDK に必要なリンカフラグを追加する
-SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++ -L\$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)」を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
+SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++」を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
-
-### 5. SDK を利用するために必要な設定を追加する
-1. `Build Settings`の`Library Search Paths`に`$(SDKROOT)/usr/lib/swift`を追加してください。
-1. SDKを利用するアプリの`Minimum Deployments`が`iOS 12.1`以下の場合、`Build Settings`の`Runpath Search Paths`に`/usr/lib/swift`を追加してください。
 
 ## SDK の利用するためのチュートリアル
 SDK を利用するには、いくらかお決まりのコードを記述する必要があります。
@@ -88,7 +84,7 @@ App-Based Life-Cycle のアプリの場合、`UIApplicationDelegate` プロト�
 ```XxxAppDelegate.m
 ...
 // 1. SDK を利用するためのヘッダをインポートする
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)application:(UIApplication *)application willChangeStatusBarOrientation:
@@ -105,7 +101,7 @@ Scene-Based Life-Cycle のアプリの場合、`UIWindowSceneDelegate` プロト
 ```XxxSceneDelegate.m
 ...
 // 1. SDK を利用するためのヘッダをインポートする
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)windowScene:(UIWindowScene *)windowScene
@@ -128,7 +124,7 @@ App-Based Life-Cycle や Scene-Based Life-Cycle については以下を参考�
 ```XxxViewController.m
 ...
 // 3. SDK を利用するためのヘッダをインポートする
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 // 4. 
 @interface XxxViewController () <ORIASessionControllerAppDelegate>

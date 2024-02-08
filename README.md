@@ -69,7 +69,7 @@ To successfully build apps with SDK features, following Framework links need to 
 
 
 ### 4. Adding linker flags required for SDK
-Because SDK utilizes category classes, you need to add "-ObjC" linker flags before building your project. Or you can add "-lc++ -lstdc++ -L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)" before building. Follow instructions below to add linker flags to your project.
+Because SDK utilizes category classes, you need to add "-ObjC" linker flags before building your project. Or you can add "-lc++ -lstdc++" before building. Follow instructions below to add linker flags to your project.
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
 
@@ -86,7 +86,7 @@ In the case of App-Based Life-Cycle apps, insert following codes to `application
 ```XxxAppDelegate.m
 ...
 // 1. Importing headers required for SDK.
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)application:(UIApplication *)application willChangeStatusBarOrientation:
@@ -104,7 +104,7 @@ In the case of a Scene-Based Life-Cycle app, the following code can be added to 
 ```XxxSceneDelegate.m
 ...
 // 1. Importing headers required for SDK.
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)windowScene:(UIWindowScene *)windowScene
@@ -129,7 +129,7 @@ For this tutorial, instance of "ORIASession" class is created using `viewDidLoad
 ```XxxViewController.m
 ...
 // 3. Importing headers required for SDK.
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 // 4. 
 @interface XxxViewController () <ORIASessionControllerAppDelegate>
