@@ -42,6 +42,8 @@ SDK を組み込んだアプリの画面にオペレーターから指マーク�
 ### 0. この Git レポジトリをチェックアウトする
 ZIP としてダウンロードすると OptimalRemote.framework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
 
+次にチェックアウトしたディレクトリにある「OptimalRemote.framework.zip」を解凍してください。
+
 ### 1. OptimalRemote.framework ディレクトリをプロジェクトに追加する
 OptimalRemote.framework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.framework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.framework ディレクトリを以下を参考に追加してください。
 
@@ -56,18 +58,17 @@ OptimalRemoteResources ディレクトリには、SDK を利用するのに必�
 ### 3. SDK に必要な Framework へのリンクを追加する
 SDK を利用したアプリをビルドするには、以下の Framework へのリンクを追加する必要があります。
 
- 1. AssetsLibrary.framework
- 2. AudioToolbox.framework
- 3. AVFoundation.framework
- 4. CoreMedia.framework
- 5. CoreVideo.framework
- 6. OpenGLES.framework
- 7. SystemConfiguration.framework
- 8. Security.framework
- 9. libsqlite3.tbd
+ 1. AudioToolbox.framework
+ 2. AVFoundation.framework
+ 3. CoreMedia.framework
+ 4. CoreVideo.framework
+ 5. OpenGLES.framework
+ 6. SystemConfiguration.framework
+ 7. Security.framework
+ 8. libsqlite3.tbd
 
 ### 4. SDK に必要なリンカフラグを追加する
-SDK はカテゴリクラスを利用しているため、リンカフラグに「-ObjC」を追加してビルドする必要があります。また「-lc++ -lstdc++ -L\$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)」を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
+SDK はカテゴリクラスを利用しているため、リンカフラグに`-ObjC`を追加してビルドする必要があります。また`-lc++ -lstdc++ -L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)`を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
 
  - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
 
@@ -85,10 +86,10 @@ SDK が表示する画面は、keyWindow とは別のウィンドウに表示さ
 
 App-Based Life-Cycle のアプリの場合、`UIApplicationDelegate` プロトコルの `application:willChangeStatusBarOrientation:duration:` メソッドに以下のようにコードを追加することで対応することができます。
 
-```XxxAppDelegate.m
+```objc
 ...
 // 1. SDK を利用するためのヘッダをインポートする
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)application:(UIApplication *)application willChangeStatusBarOrientation:
@@ -102,10 +103,10 @@ App-Based Life-Cycle のアプリの場合、`UIApplicationDelegate` プロト�
 
 Scene-Based Life-Cycle のアプリの場合、`UIWindowSceneDelegate` プロトコルの `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` メソッドに以下のようにコードを追加することで対応することができます。
 
-```XxxSceneDelegate.m
+```objc
 ...
 // 1. SDK を利用するためのヘッダをインポートする
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)windowScene:(UIWindowScene *)windowScene
@@ -125,12 +126,12 @@ App-Based Life-Cycle や Scene-Based Life-Cycle については以下を参考�
 ### 2. ORIASession クラスのインスタンスを作る
 ここでは例として、`UIViewController` クラスの派生クラスの `viewDidLoad` メソッドで `ORIASession` クラスのインスタンスを作ります。`ORIASession` クラスは、SDK で iOS アプリの遠隔支援を実現するためのコアクラスのひとつです。
 
-```XxxViewController.m
+```objc
 ...
 // 3. SDK を利用するためのヘッダをインポートする
-#import "OptimalRemote-Swift.h"
+#import "OptimalRemote/OptimalRemote.h"
 ...
-// 4. 
+// 4.
 @interface XxxViewController () <ORIASessionControllerAppDelegate>
 ...
 // 5. ORIASession の制御クラスをプロパティに追加する
@@ -166,7 +167,7 @@ App-Based Life-Cycle や Scene-Based Life-Cycle については以下を参考�
 ### 3. ボタンがタップされたら ORIASession を開始する
 ここでは例として、`UIViewController` クラスの派生クラスが `helpMeButton` という `UIButton` クラスのプロパティを持っていると仮定し、そのボタンがタップされたら ORIASession を開始する、というコードを追加します。
 
-```XxxViewController.m
+```objc
 ...
 // 11. ORIASession が開始したときのメソッド
 - (void)controllerDidOpen:(ORIASessionController *)controller {
@@ -203,7 +204,7 @@ iOS 9 から追加された App Transport Security(ATS) へ optim.co.jp とそ�
 次の設定を行うことで SDK の通信が ATS によって中断されることを回避します。
 Info.plist の plist 要素へ ATS の設定を追加してください。
 
-```Info.plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -230,7 +231,7 @@ Info.plist の plist 要素へ ATS の設定を追加してください。
 ### 5. Background Modesを設定する
 次の設定を行うことで、iOS アプリがバックグラウンド時に VoIP が切断されることを回避します。
 Info.plist の plist 要素へ Background Modes の設定を追加してください。
-```Info.plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -262,3 +263,54 @@ UIAlertView は iOS 8 以降は非推奨となっているモジュールで、�
 ですので iOS 11 以上に対応される場合には、ダイアログ表示には UIAlertController を使用し、 iOS 11 未満にも対応される場合には必要に応じて分岐の処理を実装いただけますようお願い致します。
 
 以上でチュートリアルは完了です。うまくオペレーターツールと接続できない場合、お問い合わせください。
+
+### 8. Privacy Manifestを設定する
+2024年春以降、新規アプリまたはアプリのアップデートをApp Storeに提出する場合、SDKのPrivacy Manifestを含める必要があります。Privacy Manifestについては以下の資料を参考にしてください。
+
+- [Privacy manifest files](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files)
+
+このSDKはPrivacy Manifest(PrivacyInfo.xcprivacy)を含んでいますが、SDKを組み込んだアプリにSDKのPrivacy Manifestが含まれていないことを確認しています。
+
+そのため、アプリのPrivacy Manifestに以下の項目の記載をお願い致します。
+
+#### NSPrivacyTracking
+アプリまたはサードパーティSDKが、App Tracking Transparencyフレームワークで定義されているトラッキングのためにデータを使用するかどうかを示すブール値です。
+
+SDKでは、トラッキングのためにデータを使用していないため NO(false) となります。
+
+#### NSPrivacyTrackingDomains
+アプリまたはサードパーティSDKが接続する、トラッキングを行うインターネットドメインの一覧を示す文字列の配列です。
+
+SDKではトラッキングしていないため、空となります。
+
+#### NSPrivacyCollectedDataTypes
+アプリまたはサードパーティ SDK が収集するデータタイプを記述する辞書の配列です。
+
+SDKでは、以下のデータを収集しています。以下のキーと値については、[こちら](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests)を参照してください。
+
+| NSPrivacyCollectedDataType | NSPrivacyCollectedDataTypeLinked |NSPrivacyCollectedDataTypeTracking |NSPrivacyCollectedDataTypePurposes |
+|---|---|---|---|
+| NSPrivacyCollectedDataTypeAudioData | false | false | NSPrivacyCollectedDataTypePurposeAppFunctionality |
+| NSPrivacyCollectedDataTypeCustomerSupport | false | false | NSPrivacyCollectedDataTypePurposeAppFunctionality |
+
+#### NSPrivacyAccessedAPITypes
+アプリまたはサードパーティSDKがアクセスするAPIタイプのうち、アクセスに理由が必要なAPIとして指定されているものを記述する辞書の配列です。
+
+SDKでは、以下のAPIタイプにアクセスしています。以下のキーと値については、[こちら](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api)を参照してください。
+
+| NSPrivacyAccessedAPIType | NSPrivacyAccessedAPITypeReasons |
+|---|---|
+| NSPrivacyAccessedAPICategoryUserDefaults | CA92.1 |
+| NSPrivacyAccessedAPICategoryFileTimestamp | C617.1 |
+| NSPrivacyAccessedAPICategorySystemBootTime | 35F9.1 |
+| NSPrivacyAccessedAPICategoryDiskSpace | E174.1 |
+
+### 9. App Store Connect でのアプリのプライバシーについて
+新規アプリまたはアプリのアップデートをApp Store提出する場合、アプリのプライバシー方針（サードパーティパートナーのコードをアプリに組み込む場合は、そのパートナーの方針も含む）に関する情報が必要となります。
+
+アプリの提出時には、以下の「データの種類」と「データの使用」について記載してください。
+
+| データの種類 | データの使用 |
+|---|---|
+| オーディオデータ | アプリの機能 |
+| カスタマーサポート | アプリの機能 |
