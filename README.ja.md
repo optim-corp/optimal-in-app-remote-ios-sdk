@@ -42,6 +42,8 @@ SDK を組み込んだアプリの画面にオペレーターから指マーク�
 ### 0. この Git レポジトリをチェックアウトする
 ZIP としてダウンロードすると OptimalRemote.framework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
 
+次にチェックアウトしたディレクトリにある「OptimalRemote.framework.zip」を解凍してください。
+
 ### 1. OptimalRemote.framework ディレクトリをプロジェクトに追加する
 OptimalRemote.framework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.framework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.framework ディレクトリを以下を参考に追加してください。
 

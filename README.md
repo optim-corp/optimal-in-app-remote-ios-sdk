@@ -42,6 +42,8 @@ Before starting with the procedure below, register as a developer and make sure 
 ### 0. Run checkout on the following git repository.
 When downloaded as a ZIP file, files contained in "OptimalRemote.framework" lose structure and becomes invalid. Make sure to use Git repository instead and run checkout.
 
+Next, unzip "OptimalRemote.framework.zip" in the directory that you checked out.
+
 ### 1. Add "OptimalRemote.framework" directory to your project.
 "OptimalRemote.framework" directory contains a set of header files and static library files. Follow the instructions below to add "OptimalRemote.framework" contained in the Git repository to your project.
 
