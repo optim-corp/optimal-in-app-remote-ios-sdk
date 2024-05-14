@@ -40,12 +40,12 @@ SDK を組み込んだアプリの画面にオペレーターから指マーク�
  3. オペレーターツールを利用するためのアカウント (ID・パスワード)
 
 ### 0. この Git レポジトリをチェックアウトする
-ZIP としてダウンロードすると OptimalRemote.framework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
+ZIP としてダウンロードすると OptimalRemote.xcframework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
 
-次にチェックアウトしたディレクトリにある「OptimalRemote.framework.zip」を解凍してください。
+次にチェックアウトしたディレクトリにある「OptimalRemote.xcframework.zip」を解凍してください。
 
-### 1. OptimalRemote.framework ディレクトリをプロジェクトに追加する
-OptimalRemote.framework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.framework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.framework ディレクトリを以下を参考に追加してください。
+### 1. OptimalRemote.xcframework ディレクトリをプロジェクトに追加する
+OptimalRemote.xcframework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.xcframework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.xcframework ディレクトリを以下を参考に追加してください。
 
  - [Embedding Frameworks In An App : Embedding a Framework in iOS, macOS, watchOS, and tvOS Apps](https://developer.apple.com/library/archive/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-EMBED_IN_APP_SECTION)
  - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
