@@ -1,16 +1,15 @@
-# Optimal In-App Remote SDK for iOS: Limitations
+# Optimal In-App Remote SDK for iOS の制約事項
 
-## Basic limitations
+## 基本的な制約事項
 
-1. Screen sharing does not support alerts displayed by "UIAlertView".
-2. Screen sharing does not support ActionSheet screens displayed by "UIActionSheet".
-3. Screen sharing does not support camera live preview.
-4. Screen sharing may not support "Quick Look" preview screen.
-5. Supported UI control is limited to "UIButton" control.
-6. UI controls other than UIButton controls cannot be remotely controlled.
-7. Edit menu may be displayed as a white rectangle in the operator tool.
-8. if you quickly switch the app screen horizontally and vertically, the screen may appear collapsed in the operator tool
-9. voice call function is not available in IPv6 environment
-10. if the WindowLevel of the app screen is higher than UIWindowLevelAlert, the screen displayed by the SDK may be hidden.
-11. When using the Multiple Windows function of iPad, the screen displayed by the SDK may not be displayed in the correct window.
-
+1. UIAlertView によるアラート画面は画面共有できません
+2. UIActionSheet によるアクションシート画面は画面共有できません
+3. UIAlertController によるアラート画面やアクションシート画面は、オペレーターツールには画面が崩れて表示される場合がございます
+4. カメラのライブプレビュー画面は画面共有できません
+5. Quick Look のプレビュー画面は画面共有されない場合がございます
+6. UIButton コントロール以外の UI コントロールは遠隔操作できません
+7. 編集メニューを白い矩形としてオペレーターツールに表示することがございます
+8. アプリ画面を縦横に素早く切り替えると、オペレーターツールには画面が崩れて表示される場合がございます
+9. IPv6 環境下では音声通話機能をご利用できません
+10. アプリ画面 の WindowLevel が UIWindowLevelAlert 以上の場合、SDK が表示する画面が隠れる場合がございます
+11. iPad の Multiple Windows 機能を利用すると、SDK が表示する画面が正しいウィンドウに表示されない場合がございます

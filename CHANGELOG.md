@@ -1,30 +1,47 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+このプロジェクトに対するすべての重要な変更は、このファイルに文書化されます。
+
+## [2.1.0] - 2024-05-14
+
+### Changed
+
+- シミュレーターに対応しました。
+
+> [!NOTE]
+> 実機用・シミュレーター用の framework を xcframework にバンドルしています。
+> 組み込む場合は xcframework ディレクトリをプロジェクトに追加してください。
+> 詳細は[README.md](./README.md)を参照してください。
+
+- Library Evolution に対応しました。
+
+> [!NOTE]
+> Swift 製のアプリに組み込む際に、本 SDK と Swift コンパイラバージョンを揃える必要がなくなりました。
 
 ## [2.0.0] - 2024-03-22
 
 ### Changed
 
-- Privacy Manifest is now supported.
+- Privacy Manifest に対応しました。
 
 > [!WARNING]
-> This SDK includes the privacy manifest (PrivacyInfo.xcprivacy), but we have confirmed that apps incorporating the SDK do not include the SDK's privacy manifest.
-> Therefore, please include it in the privacy manifest of your application.
-> Please refer [README.md](./README.md) for details.
+> この SDK は Privacy Manifest(PrivacyInfo.xcprivacy)を含んでいますが、SDK を組み込んだアプリに SDK の Privacy Manifest が含まれていないことを確認しています。
+> そのため、組み込むアプリの Privacy Manifest に記載が必要になります。
+> 詳細は[README.md](./README.md)を参照してください。
 
-- Migrated the development language of OptimalRemote In-App Remote SDK for iOS from Objective-C to Swift.
+- OptimalRemote In-App Remote SDK for iOS の開発言語を Objective-C から Swift に移行しました。
 
 > [!WARNING]
-> This version includes some breaking changes:
-> - Changed the names of some signature
+> 以下の破壊的変更が含まれます。
+>
+> - いくつかのシグネチャの名称の変更
 >   - `ORIASessionDelegate.oriaSessionDidSetMicrohponeEnabled`
->     - Changed to `ORIASessionDelegate.oriaSessionDidSetMicrophoneEnabled`
+>     - `ORIASessionDelegate.oriaSessionDidSetMicrophoneEnabled`に変更
 >   - `ORIAUIAssistiveButtonViewSetting.assistiveButtoView`
->     - Changed to `ORIAUIAssistiveButtonViewSetting.assistiveButtonView`
+>     - `ORIAUIAssistiveButtonViewSetting.assistiveButtonView`に変更
 >   - `ORIAUIViewDelegateDefault.isVoiceChatSpeakerActive`
->     - Changed to `ORIAUIViewDelegateDefault.isVoiceChatSpeakerActivate`
-> - Changed the needed build settings
->   - If your application's `Minimum Deployments` is `iOS 12.1` or above, Add `/usr/lib/swift` to `Build Settings`'s `Runpath Search Paths`
->   - Add `-L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)` to `Other Linker Flags`
->   - Add `$(SDKROOT)/usr/lib/swift` to `Library Search Paths`
+>     - `ORIAUIViewDelegateDefault.isVoiceChatSpeakerActivate`に変更
+> - ビルド手順の変更
+>   - SDK を使用するアプリの`Minimum Deployments`が`iOS 12.1`以下の場合、`Build Settings`の`Runpath Search Paths`に`/usr/lib/swift`を追加する必要があります。
+>   - `Other Linker Flags`に`-L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)`を追加する必要があります。
+>   - `Library Search Paths`に`$(SDKROOT)/usr/lib/swift`を追加する必要があります。

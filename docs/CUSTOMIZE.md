@@ -1,46 +1,53 @@
-# Customizing "Optimal In-App Remote SDK for iOS" apps
+# Optimal In-App Remote SDK for iOS アプリのカスタマイズ
 
-### Remote control feature
-Remote control from the remote operators is enabled by default.
+## 遠隔操作機能
 
-With the default setting, when the remote control is requested from the operator, a dialog is displayed and asks user whether to allow remote control. According to user's choices, following actions take place.
+既定では、オペレーターからの遠隔操作が有効になっています。
 
- - When "Allow" is selected
-     - Operators are allowed to remotely control the device.
-     - When the operator requests remote control access again, it is accepted automatically without dialog.
- - When "Allow(Only once)" is selected
-     - Operators are allowed to remotely control the device.
-     - When the operator requests remote control access again, dialog is displayed.
- - When "Deny" is selected
-     - Operator is not allowed to remotely control the device.
-     - When the operator requests remote control access again, dialog is displayed.
+オペレーターから遠隔操作を要求された場合、既定ではそれを許可するかどうかのダイアログが表示され、ユーザーの選択結果に応じて以下のように振る舞います。
 
-### Disabling remote control
-If remote control operation from remote operators need to be disabled, set "remoteInputEnabled" property to "NO" immediately after creating "ORIASession" class instance. When the property is set to "NO", no dialog prompting for permission is displayed and no remote operation will be executed.
+- 「許可」を選択した場合
+  - オペレーターからの遠隔操作を受け入れるようになります
+  - 再度遠隔操作を要求した場合、自動的に遠隔操作を受け入れます
+- 「許可 (今回のみ)」を選択した場合
+  - オペレーターからの遠隔操作を受け入れるようになります
+  - 再度遠隔操作を要求した場合、ダイアログが表示されます
+- 「拒否」を選択した場合
+  - オペレーターからの遠隔操作を受け入れません
+  - 再度遠隔操作を要求した場合、ダイアログが表示されます
 
-### Allowing remote control operation automatically without permission dialog
-If remote control operation from remote operator needs to be allowed without permission dialog, set "remoteInputAcceptsAutomaticallyEnabled"  property to "YES" immediately after creating "ORIASession" class instance. When the property is set to "YES", no dialog prompting for permission is displayed and remote operation will be allowed automatically. 
+### 遠隔操作機能を無効化する
 
-### Voice call feature
-Voice call with remote operators is disabled by default.
+オペレーターからの遠隔操作を無効にしたい場合、`ORIASession` クラスのインスタンスを作成した直後に `remoteInputEnabled` プロパティを `NO` にしてください。`NO` にすると、遠隔操作を許可するかどうかのダイアログは表示されず、遠隔操作も実行されません。
 
-When voice call with remote operators is enabled, voice call session will start when the remote operator requests for voice call.
+### 遠隔操作機能をダイアログなしで自動的に許可する
 
-Icon is displayed during the voice call. Tapping icon displays a menu, which provides users with following options.
+オペレーターからの遠隔操作をダイアログなしで自動的に許可したい場合、`ORIASession` クラスのインスタンスを作成した直後に `remoteInputAcceptsAutomaticallyEnabled` プロパティを `YES` にしてください。`YES` にすると、遠隔操作を許可するかどうかのダイアログは表示されず、自動的に遠隔操作が許可されます。
 
- - Option to output audio from the speakers (Hands free mode)
- − Option to mute microphone
+## 音声通話機能
 
-### Enabling voice call
-If voice call  with remote operator needs to be allowed , set "voiceChatEnabled" property to "YES" immediately after creating "ORIASession" class instance.
+既定では、オペレーターとの音声通話が無効になっています。
 
-### Output audio from the speakers when no headphone is connected.
-If audio needs to be output from the speakers when no headphone is connected, set  "voiceChatOverridesSpeakerWhenNoHeadphones" property to "YES" immediately after creating "ORIASession" class instance. Even when this option is set to "YES", sound will be output from headphones when the headphone is connected to the device. However, sound is output from the speakers if device user has selected option to output voice call audio from the speakers.
+オペレーターとの音声通話が有効になっている場合、オペレーターから音声通話を要求されると音声通話を開始します。
 
-## Enabling screen sharing for WKWebView
-If WKWebView needs to be enabled screen capturing on iOS 8 or later, set "screenSharingBestEffortCaptureEnabled" property to "YES" immediately after creating "ORIASession" class instance.
+ユーザーは、オペレーターとの接続中に表示されるアイコンをタップすると開くメニューから、必要に応じて以下を調整できます。
 
-### Source code example
+- スピーカーから音声を出力するようにするかどうか (ハンズフリー)
+  − マイクをミュートするかどうか
+
+### 音声通話機能を有効化する
+
+オペレーターとの音声通話を有効にしたい場合、`ORIASession` クラスのインスタンスを作成した直後に `voiceChatEnabled` プロパティを `YES` にしてください。
+
+### ヘッドフォンがない場合にスピーカーから音声を出力するようにする
+
+ヘッドフォンがない場合にスピーカーから音声を出力するようにしたい場合、`ORIASession` クラスのインスタンスを作成した直後に `voiceChatOverridesSpeakerWhenNoHeadphones` プロパティを `YES` にしてください。ヘッドフォンを接続すると、スピーカーから音声を出力するように設定していてもヘッドフォンから音声を出力するようになりますが、ユーザーがメニューからスピーカーから音声を出力するように設定した場合はその限りではありません。
+
+## WKWebView の画面共有
+
+iOS 8 以降で WKWebView の表示画面を画面共有したい場合、 `ORIASession` クラスのインスタンスを作成した直後に `screenSharingBestEffortCaptureEnabled` プロパティを `YES` にしてください。
+
+### ソースコード例
 
 ```objectivec
 self.session.screenSharingBestEffortCaptureEnabled = [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0;
