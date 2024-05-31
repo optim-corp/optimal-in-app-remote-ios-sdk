@@ -1,110 +1,123 @@
+[README in English](./README.en.md)
+
 # Optimal In-App Remote SDK for iOS
 
-"Optimal In-App Remote SDK for iOS" is a developer kit that provides remote assistance features for your iOS app.
-By incorporating this SDK into your iOS application, you can provide remote assistance for your app using [Optimal Remote](https://www.optim.com/products-detail/top/40).
+Optimal In-App Remote SDK for iOS は、iOS アプリの遠隔支援を実現するための開発キットです。
+この SDK をアプリに組み込むことで、そのアプリを [Optimal Remote](http://www.optim.co.jp/products-detail/top/40) で遠隔支援できるようになります。
 
-##Operating environment
- - Operating Environment for app
-     1. iOS 12 - iOS 17
-     2. iPhone or iPad running on operating system above are supported.
-     3. English / Japanese environment
-         - UIs will be displayed in English for languages not listed above.
-     4. Access to the Internet is required.
- - Required development environment
-     1. Xcode 15.0 or later
+## 対象環境
 
-## SDK features
+- アプリ動作環境
+  1.  iOS 12 〜 iOS 17
+  2.  上記 OS で動作している iPhone または iPad
+  3.  英語、日本語
+      - 上記以外の言語環境では英語表記になります
+  4.  インターネットに接続できるネットワーク環境
+- 開発環境
+  1.  Xcode 15.0 以降
 
-### Screen sharing
-SDK allows real-time sharing of your app's screen.
+## この SDK でできること
 
-### Remote control feature
-SDK allows your app to be operated by remote operators (help desks, customer support team, etc.).
+### 画面共有機能
 
-### Highlighting
-SDK allows remote operators to highlight and draw on the screen using a red marker, providing more efficient instructions to users.
+SDK を組み込んだアプリの画面をオペレーターがリアルタイムに閲覧できます。
 
-### Finger indicator
-SDK also allows remote operators to point to the specific area of the screen using a finger icon.
+### 遠隔操作機能
 
-### Voice call
-SDK also provides VoIP voice calls between app user and remote operator for easier support.
+SDK を組み込んだアプリをオペレーターが操作できます。
 
-## Incorporating SDK to your project
-Before starting with the procedure below, register as a developer and make sure you have all the requirements listed below:
+### 赤ペン機能
 
-[Please refer here for the detail request steps.](docs/REGISTRATION.md)
+SDK を組み込んだアプリの画面にオペレーターが赤ペンで書き込むことでユーザーに操作を指示することができます。
 
- 1. Profile and key pair required for SDK
- 2. Optimal Remote Operator Tool (for Windows)
- 3. User account (user ID and password) for using Optimal Remote Operator Tool
+### 指さし機能
 
-### 0. Run checkout on the following git repository.
-When downloaded as a ZIP file, files contained in "OptimalRemote.framework" lose structure and becomes invalid. Make sure to use Git repository instead and run checkout.
+SDK を組み込んだアプリの画面にオペレーターから指マークを表示することでユーザーに操作を指示することができます。
 
-Next, unzip "OptimalRemote.framework.zip" in the directory that you checked out.
+### 音声通話機能
 
-### 1. Add "OptimalRemote.framework" directory to your project.
-"OptimalRemote.framework" directory contains a set of header files and static library files. Follow the instructions below to add "OptimalRemote.framework" contained in the Git repository to your project.
+オペレーターがユーザーと VoIP で音声通話しながら遠隔支援を効果的に実施することができます。
 
- - [Embedding Frameworks In An App : Embedding a Framework in iOS, macOS, watchOS, and tvOS Apps](https://developer.apple.com/library/archive/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-EMBED_IN_APP_SECTION)
- - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
+## SDK をプロジェクトに導入する
 
-### 2. Add "OptimalRemoteResources" directory to your project.
-"OptimalRemoteResources" directory contains a set of text and image files required to use this SDK. Follow the instructions below to add "OptimalRemoteResources" contained in the Git repository to your project.
+以下の手順を進める前に、開発者登録をしていただき以下をご用意ください。
 
- - [Managing Files and Folders in Your Xcode Project: Add Existing Files and Folders to a Project](https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project)
+[詳しい手順はこちらを参照してください。](docs/REGISTRATION.md)
 
+1.  SDK を利用するためのプロファイル・キーペア
+2.  オペレーターツール (Windows 版)
+3.  オペレーターツールを利用するためのアカウント (ID・パスワード)
 
-### 3. Adding Framework links required by SDK
-To successfully build apps with SDK features, following Framework links need to be added to your project.
+### 0. この Git レポジトリをチェックアウトする
 
- 1. AudioToolbox.framework
- 2. AVFoundation.framework
- 3. CoreMedia.framework
- 4. CoreVideo.framework
- 5. OpenGLES.framework
- 6. SystemConfiguration.framework
- 7. Security.framework
- 8. libsqlite3.tbd
+ZIP としてダウンロードすると OptimalRemote.framework の構成が不正になるので Git レポジトリとしてチェックアウトしてください。
 
+次にチェックアウトしたディレクトリにある「OptimalRemote.framework.zip」を解凍してください。
 
-### 4. Adding linker flags required for SDK
-Because SDK utilizes category classes, you need to add `-ObjC` linker flags before building your project. And you need to add `-lc++ -lstdc++` before building. Follow instructions below to add linker flags to your project.
+### 1. OptimalRemote.framework ディレクトリをプロジェクトに追加する
 
- - [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
+OptimalRemote.framework には、SDK を利用するのに必要なヘッダファイル・静的ライブラリファイルファイルが含まれています。OptimalRemote.framework をプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemote.framework ディレクトリを以下を参考に追加してください。
 
-## Tutorials for using SDK
-Following describes sets of codes frequently used in apps utilizing this SDK.
+- [Embedding Frameworks In An App : Embedding a Framework in iOS, macOS, watchOS, and tvOS Apps](https://developer.apple.com/library/archive/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-EMBED_IN_APP_SECTION)
+- [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
 
-### 1. Supporting device's screen rotation
-Following code is not necessary if your app does not support screen rotation.
+### 2. OptimalRemoteResources ディレクトリ をプロジェクトに追加する
 
-Screen displayed by SDK is displayed in window that is not "keyWindow". Therefore, device's screen rotation needs to be implemented separately.
+OptimalRemoteResources ディレクトリには、SDK を利用するのに必要な文字列ファイル・画像ファイル一式が含まれています。OptimalRemoteResources ディレクトリをプロジェクトに追加するには、この Git レポジトリに含まれる OptimalRemoteResources ディレクトリを以下を参考に追加してください。
 
-In the case of App-Based Life-Cycle apps, insert following codes to `application:willChangeStatusBarOrientation:duration:` method in `UIApplicationDelegate` protocol.
+- [Managing Files and Folders in Your Xcode Project: Add Existing Files and Folders to a Project](https://developer.apple.com/documentation/xcode/managing-files-and-folders-in-your-xcode-project)
+
+### 3. SDK に必要な Framework へのリンクを追加する
+
+SDK を利用したアプリをビルドするには、以下の Framework へのリンクを追加する必要があります。
+
+1.  AudioToolbox.framework
+2.  AVFoundation.framework
+3.  CoreMedia.framework
+4.  CoreVideo.framework
+5.  OpenGLES.framework
+6.  SystemConfiguration.framework
+7.  Security.framework
+8.  libsqlite3.tbd
+
+### 4. SDK に必要なリンカフラグを追加する
+
+SDK はカテゴリクラスを利用しているため、リンカフラグに`-ObjC`を追加してビルドする必要があります。また`-lc++ -lstdc++`を追加してビルドする必要があります。リンカフラグを追加するには以下を参考にしてください。
+
+- [Technical Q&A QA1490: Building Objective-C static libraries with categories](https://developer.apple.com/library/mac/qa/qa1490/_index.html)
+
+## SDK の利用するためのチュートリアル
+
+SDK を利用するには、いくらかお決まりのコードを記述する必要があります。
+
+### 1. 端末の画面回転に対応する
+
+アプリが端末の画面対応に対応していない場合、以下の対応は不要です。
+
+SDK が表示する画面は、keyWindow とは別のウィンドウに表示されます。そのため、端末の画面対応に手動で対応する必要があります。
+
+App-Based Life-Cycle のアプリの場合、`UIApplicationDelegate` プロトコルの `application:willChangeStatusBarOrientation:duration:` メソッドに以下のようにコードを追加することで対応することができます。
 
 ```objc
 ...
-// 1. Importing headers required for SDK.
+// 1. SDK を利用するためのヘッダをインポートする
 #import "OptimalRemote/OptimalRemote.h"
 ...
 
 - (void)application:(UIApplication *)application willChangeStatusBarOrientation:
   (UIInterfaceOrientation)newStatusBarOrientation duration:(NSTimeInterval)duration {
     ...
-    // 2. When devices are rotated, rotate the screen displayed by SDK.
+    // 2. 画面が回転した時に SDK が表示する画面を回転させる
     [ORIAWindow setOrientation:newStatusBarOrientation withDuration:duration];
 }
 ...
 ```
 
-In the case of a Scene-Based Life-Cycle app, the following code can be added to the `UIWindowSceneDelegate` protocol's For apps with `UIWindowSceneDelegate` protocol, you can add the following code to the `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` method.
-
+Scene-Based Life-Cycle のアプリの場合、`UIWindowSceneDelegate` プロトコルの `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` メソッドに以下のようにコードを追加することで対応することができます。
 
 ```objc
 ...
-// 1. Importing headers required for SDK.
+// 1. SDK を利用するためのヘッダをインポートする
 #import "OptimalRemote/OptimalRemote.h"
 ...
 
@@ -113,31 +126,31 @@ In the case of a Scene-Based Life-Cycle app, the following code can be added to 
     interfaceOrientation:(UIInterfaceOrientation)previousInterfaceOrientation
     traitCollection:(UITraitCollection *)previousTraitCollection {
     ...
-    // 2. When devices are rotated, rotate the screen displayed by SDK.
+    // 2. 画面が回転した時に SDK が表示する画面を回転させる
     [ORIAWindow setOrientation:[windowScene interfaceOrientation] withDuration:0];
 }
 ...
 ```
 
+App-Based Life-Cycle や Scene-Based Life-Cycle については以下を参考にしてください。
 
-For more information about App-Based Life-Cycle and Scene-Based Life-Cycle, please refer to the following.
 - [Managing Your App's Life Cycle](https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle?language=objc)
 
+### 2. ORIASession クラスのインスタンスを作る
 
-### 2. Create an instance of "ORIASession" class.
-For this tutorial, instance of "ORIASession" class is created using `viewDidLoad` method derived from `UIViewController` class. "ORIASession" class is one of SDK's core classes for implementing iOS app remote support.
+ここでは例として、`UIViewController` クラスの派生クラスの `viewDidLoad` メソッドで `ORIASession` クラスのインスタンスを作ります。`ORIASession` クラスは、SDK で iOS アプリの遠隔支援を実現するためのコアクラスのひとつです。
 
 ```objc
 ...
-// 3. Importing headers required for SDK.
+// 3. SDK を利用するためのヘッダをインポートする
 #import "OptimalRemote/OptimalRemote.h"
 ...
 // 4.
 @interface XxxViewController () <ORIASessionControllerAppDelegate>
 ...
-// 5. Add "ORIASession" control class to the property.
+// 5. ORIASession の制御クラスをプロパティに追加する
 @property (nonatomic, strong) ORIASessionController *controller;
-// 6. Add "ORIASession" class to the property.
+// 6. ORIASession クラスをプロパティに追加する
 @property (nonatomic, strong) ORIASession *session;
 ...
 @end
@@ -145,51 +158,52 @@ For this tutorial, instance of "ORIASession" class is created using `viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     ...
-    // 7. Copy and paste the content of ".profile" to replace "XXXXXXXX" below:
+    // 7. .profile の内容を以下に貼り付ける
     NSString *PROFILE = @"XXXXXXXX";
-    // 8. Copy and paste the content of ".key" to replace "XXXXXXXX" below:
+    // 8. .key の内容を以下に貼り付ける
     NSString *KEY = @"XXXXXXXX";
 
-    // 9. Create an instance of "ORIASession" control class.
+    // 9. ORIASession の制御クラスのインスタンスを作る
     self.controller = [ORIASessionController defaultController];
     self.controller.appDelegate = self;
 
-    // 10. Create an instance of "ORIASession" class.
+    // 10. ORIASession クラスのインスタンスを作る
     self.session = [ORIASession sessionForProfile:PROFILE signedBy:KEY];
-    // Enable VoIP (default: NO)
+    // VoIP を有効にする (既定では NO)
     self.session.voiceChatEnabled = YES;
-    // Output audio from the speakers when no headphone is connected (default: NO).
+    // ヘッドフォンがない場合にスピーカーから音声を出力する (既定では NO)
     self.session.voiceChatOverridesSpeakerWhenNoHeadphones = YES;
     self.session.delegate = self.controller;
     [self.session loadDefaultPointerImages];
 }
 ```
 
-### 3. Start "ORIASession" when the button is tapped.
-In this tutorial, the derived class of "UIViewController" class has  "UIButton" class property "helpMeButton".  We insert following codes so that "ORIASession"  is initiated when this button is tapped.
+### 3. ボタンがタップされたら ORIASession を開始する
+
+ここでは例として、`UIViewController` クラスの派生クラスが `helpMeButton` という `UIButton` クラスのプロパティを持っていると仮定し、そのボタンがタップされたら ORIASession を開始する、というコードを追加します。
 
 ```objc
 ...
-// 11. Method for initiating "ORIASession"
+// 11. ORIASession が開始したときのメソッド
 - (void)controllerDidOpen:(ORIASessionController *)controller {
-    // Disable button until "ORIASession" is completed.
+    // ORIASession が完了するまでボタンを無効化する
     self.helpMeButton.enabled = NO;
 }
 
-// 12. Method for completing "ORIASession"
+// 12. ORIASession が完了したときのメソッド
 - (void)controllerDidComplete:(ORIASessionController *)controller remoteConnectionHasEstablished:
   (BOOL)remoteConnectionHasEstablished {
-    // Enable button after "ORIASession" is completed.
+    // ORIASession が完了したのでボタンを有効化する
     self.helpMeButton.enabled = YES;
-    // Displaying completion screen
+    // 完了画面を表示する
     if (remoteConnectionHasEstablished) {
         [ORIAUISplashWindow showForCompletion];
     }
 }
 
-//  13. Method to run when "helpMeButton" is tapped
+//  13. helpMeButton がタップされたときのメソッド
 - (IBAction)helpMeButtonDidTouchUpInside:(id)sender {
-    // Displaying startup screen and initiate "ORIASession"
+    // 開始画面を表示して ORIASession を開始する
     if (self.controller.canOpen) {
         [ORIAUISplashWindow showWithBlock:^{
             [self.session open];
@@ -199,11 +213,12 @@ In this tutorial, the derived class of "UIViewController" class has  "UIButton" 
 ...
 ```
 
-### 4. Configure App Transport Security
-"optim.co.jp" and its subdomains must be set as an exception to App Transport Security (ATS), which as added in iOS 9.
+### 4. App Transport Security を設定する
 
-For the next setup, avoid interruptions of SDK communications by ATS.
-Add the ATS settings to the "plist" element of "Info.plist."
+iOS 9 から追加された App Transport Security(ATS) へ optim.co.jp とそのサブドメインを例外として設定する必要があります。
+
+次の設定を行うことで SDK の通信が ATS によって中断されることを回避します。
+Info.plist の plist 要素へ ATS の設定を追加してください。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -229,11 +244,11 @@ Add the ATS settings to the "plist" element of "Info.plist."
 </plist>
 ```
 
-This will complete the preparations to be made on iOS application side.
+### 5. Background Modes を設定する
 
-### 5. Set Background Modes
-Please add Background Modes settings to the "plist" element of "Info.plist".
-This prevents VoIP from disconnecting when the application is running in the background.
+次の設定を行うことで、iOS アプリがバックグラウンド時に VoIP が切断されることを回避します。
+Info.plist の plist 要素へ Background Modes の設定を追加してください。
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -248,76 +263,81 @@ This prevents VoIP from disconnecting when the application is running in the bac
 </dict>
 </plist>
 ```
-This will complete the preparations to be made on iOS application side.
 
-### 6. Connecting to the Operator Tool
-After building your app, run the app from the device with access to the Internet. Tap `helpMeButton` to display "Receipt Number". Enter this Receipt Number from Operator Tool. Operator Tool and App is connected and app screen  is displayed on Operator Tool. Now you are ready to go!
+これで iOS アプリ側の準備は完了です。
 
-This completes the tutorial for SDK. Please contact us if you experience problems connecting to the Operator Tool.
+### 6. オペレーターツールと接続する
 
+アプリをビルドしたら、インターネットに接続された端末でアプリを実行し、`helpMeButton` をタップすると「受付番号」が表示されます。オペレーターツールでこの受付番号を入力すると、オペレーターツールとアプリが接続され、オペレーターツールにアプリの画面が表示されます！
 
-### 7. Support for iOS 11 and later
-The following issue occurs when displaying a dialog using UIAlertView on iOS 11 or later.
- - The disconnect confirmation dialog is not displayed. As a result, disconnection from the device cannot be performed.
- - When remote control is requested from the operator tool, the remote control permission dialog will not be displayed. As a result, remote control cannot be performed.
+### 7. iOS 11 以上の対応について
 
-The cause is that the keyWindow setting was unintentionally changed, which caused the above event.
-UIAlertView is a deprecated module since iOS 8, and it is recommended to use UIAlertController to display dialogs.
+iOS 11 以上にて UIAlertView を用いたダイアログ表示を行うと以下の事象が発生します。
+
+- 切断確認ダイアログが表示されない。これに伴い、端末から切断が行えない。
+- オペレーターツールから遠隔操作をリクエストした場合に、遠隔操作許可ダイアログが表示されない。これに伴い、遠隔操作が行えない。
+
+原因は keyWindow の設定が意図せず変更されており、これの影響を受けて上記の事象が発生しております。
+UIAlertView は iOS 8 以降は非推奨となっているモジュールで、ダイアログの表示には UIAlertController を用いることが推奨されています。
 [UIAlertView](https://developer.apple.com/documentation/uikit/uialertview)
 
-Therefore, if you plan to support iOS 11, please use UIAlertController for displaying dialogs, and implement branching processes as necessary if you plan to support versions of iOS less than 11.
+ですので iOS 11 以上に対応される場合には、ダイアログ表示には UIAlertController を使用し、 iOS 11 未満にも対応される場合には必要に応じて分岐の処理を実装いただけますようお願い致します。
 
-This completes the tutorial. If you cannot connect to the operator tool successfully, please contact us.
+以上でチュートリアルは完了です。うまくオペレーターツールと接続できない場合、お問い合わせください。
 
-### 8. Configure Privacy Manifest
-Starting in spring 2024, if your new app or app update submission to the App Store, you’ll need to include the privacy manifest for the SDK.
-Please refer to the following documents for more information on privacy manifests.
+### 8. Privacy Manifest を設定する
+
+2024 年春以降、新規アプリまたはアプリのアップデートを App Store に提出する場合、SDK の Privacy Manifest を含める必要があります。Privacy Manifest については以下の資料を参考にしてください。
 
 - [Privacy manifest files](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files)
 
-The SDK includes the privacy manifest (PrivacyInfo.xcprivacy), but we have confirmed that apps incorporating the SDK do not include the SDK's privacy manifest.
+この SDK は Privacy Manifest(PrivacyInfo.xcprivacy)を含んでいますが、SDK を組み込んだアプリに SDK の Privacy Manifest が含まれていないことを確認しています。
 
-Therefore, please include the following items in the privacy manifest of your application.
+そのため、アプリの Privacy Manifest に以下の項目の記載をお願い致します。
 
 #### NSPrivacyTracking
-A Boolean that indicates whether your app or third-party SDK uses data for tracking as defined under the App Tracking Transparency framework.
 
-In the SDK, NO (false) because the data is not used for tracking.
+アプリまたはサードパーティ SDK が、App Tracking Transparency フレームワークで定義されているトラッキングのためにデータを使用するかどうかを示すブール値です。
+
+SDK では、トラッキングのためにデータを使用していないため NO(false) となります。
 
 #### NSPrivacyTrackingDomains
-An array of strings that lists the internet domains your app or third-party SDK connects to that engage in tracking.
 
-Empty because it is not tracked by the SDK.
+アプリまたはサードパーティ SDK が接続する、トラッキングを行うインターネットドメインの一覧を示す文字列の配列です。
+
+SDK ではトラッキングしていないため、空となります。
 
 #### NSPrivacyCollectedDataTypes
-An array of dictionaries that describes the data types your app or third-party SDK collects.
 
-The SDK collects the following data.
-See [Describing data use in privacy manifests](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests) for the following keys and values.
+アプリまたはサードパーティ SDK が収集するデータタイプを記述する辞書の配列です。
 
-| NSPrivacyCollectedDataType | NSPrivacyCollectedDataTypeLinked |NSPrivacyCollectedDataTypeTracking |NSPrivacyCollectedDataTypePurposes |
-|---|---|---|---|
-| NSPrivacyCollectedDataTypeAudioData | false | false | NSPrivacyCollectedDataTypePurposeAppFunctionality |
-| NSPrivacyCollectedDataTypeCustomerSupport | false | false | NSPrivacyCollectedDataTypePurposeAppFunctionality |
+SDK では、以下のデータを収集しています。以下のキーと値については、[こちら](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests)を参照してください。
+
+| NSPrivacyCollectedDataType                | NSPrivacyCollectedDataTypeLinked | NSPrivacyCollectedDataTypeTracking | NSPrivacyCollectedDataTypePurposes                |
+| ----------------------------------------- | -------------------------------- | ---------------------------------- | ------------------------------------------------- |
+| NSPrivacyCollectedDataTypeAudioData       | false                            | false                              | NSPrivacyCollectedDataTypePurposeAppFunctionality |
+| NSPrivacyCollectedDataTypeCustomerSupport | false                            | false                              | NSPrivacyCollectedDataTypePurposeAppFunctionality |
 
 #### NSPrivacyAccessedAPITypes
-An array of dictionaries that describe the API types your app or third-party SDK accesses that have been designated as APIs that require reasons to access.
 
-The SDK accesses the following API types.See [Describing use of required reason API](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api)  for the following keys and values.
+アプリまたはサードパーティ SDK がアクセスする API タイプのうち、アクセスに理由が必要な API として指定されているものを記述する辞書の配列です。
 
-| NSPrivacyAccessedAPIType | NSPrivacyAccessedAPITypeReasons |
-|---|---|
-| NSPrivacyAccessedAPICategoryUserDefaults | CA92.1 |
-| NSPrivacyAccessedAPICategoryFileTimestamp | C617.1 |
-| NSPrivacyAccessedAPICategorySystemBootTime | 35F9.1 |
-| NSPrivacyAccessedAPICategoryDiskSpace | E174.1 |
+SDK では、以下の API タイプにアクセスしています。以下のキーと値については、[こちら](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api)を参照してください。
 
-### 9. App Privacy on App Store Connect
-This information about your app’s privacy practices, including the practices of third-party partners whose code you integrate into your app, is required to submit new apps and app updates to the App Store.
+| NSPrivacyAccessedAPIType                   | NSPrivacyAccessedAPITypeReasons |
+| ------------------------------------------ | ------------------------------- |
+| NSPrivacyAccessedAPICategoryUserDefaults   | CA92.1                          |
+| NSPrivacyAccessedAPICategoryFileTimestamp  | C617.1                          |
+| NSPrivacyAccessedAPICategorySystemBootTime | 35F9.1                          |
+| NSPrivacyAccessedAPICategoryDiskSpace      | E174.1                          |
 
-When submitting your app, please describe the following "Types of data" and "Data use".
+### 9. App Store Connect でのアプリのプライバシーについて
 
-| Types of data | Data use |
-|---|---|
-| Audio Data | App Functionality |
-| Customer Support | App Functionality |
+新規アプリまたはアプリのアップデートを App Store 提出する場合、アプリのプライバシー方針（サードパーティパートナーのコードをアプリに組み込む場合は、そのパートナーの方針も含む）に関する情報が必要となります。
+
+アプリの提出時には、以下の「データの種類」と「データの使用」について記載してください。
+
+| データの種類       | データの使用 |
+| ------------------ | ------------ |
+| オーディオデータ   | アプリの機能 |
+| カスタマーサポート | アプリの機能 |

@@ -1,18 +1,18 @@
-# Optimal In-App Remote SDK for iOS: Limitations
+# Optimal In-App Remote SDK for iOS の制約事項
 
-## Basic limitations
- 1. Screen sharing does not support alerts displayed by "UIAlertView".
- 2. Screen sharing does not support ActionSheet screens displayed by "UIActionSheet".
- 3. Screen sharing does not support camera live preview.
- 4. Screen sharing may not support "Quick Look" preview screen.
- 5. Supported UI control is limited to "UIButton" control.
- 6. UI controls other than UIButton controls cannot be remotely controlled.
- 7. Edit menu may be displayed as a white rectangle in the operator tool.
- 8. floating icon may be hidden when continuously tapping the floating icon during support.
- 9. if you quickly switch the app screen horizontally and vertically, the screen may appear collapsed in the operator tool
- 10. voice call function is not available in IPv6 environment
- 11. if the WindowLevel of the app screen is higher than UIWindowLevelAlert, the screen displayed by the SDK may be hidden.
- 12. When using the Multiple Windows function of iPad, the screen displayed by the SDK may not be displayed in the correct window.
- 13. when the app is turned sideways on the iPad, the screen displayed by the SDK and the orientation of the red pen and pointing finger may not match.
- 14. When the app is oriented horizontally on an iPhone with iOS13, the screen may appear collapsed in the operator tool.
+## 基本的な制約事項
 
+1.  UIAlertView によるアラート画面は画面共有できません
+2.  UIActionSheet によるアクションシート画面は画面共有できません
+3.  UIAlertController によるアラート画面やアクションシート画面は、オペレーターツールには画面が崩れて表示される場合がございます
+4.  カメラのライブプレビュー画面は画面共有できません
+5.  Quick Look のプレビュー画面は画面共有されない場合がございます
+6.  UIButton コントロール以外の UI コントロールは遠隔操作できません
+7.  編集メニューを白い矩形としてオペレーターツールに表示することがございます
+8.  サポート中のフローティングアイコンを連続タップするとフローティングアイコンが非表示になる場合がございます
+9.  アプリ画面を縦横に素早く切り替えると、オペレーターツールには画面が崩れて表示される場合がございます
+10. IPv6 環境下では音声通話機能をご利用できません
+11. アプリ画面 の WindowLevel が UIWindowLevelAlert 以上の場合、SDK が表示する画面が隠れる場合がございます
+12. iPad の Multiple Windows 機能を利用すると、SDK が表示する画面が正しいウィンドウに表示されない場合がございます
+13. iPad でアプリを横向きにすると、SDK が表示する画面や赤ペン・指差しの向きが合わない場合がございます
+14. iOS13 系の iPhone でアプリを横向きにすると、オペレーターツールには画面が崩れて表示される場合がございます

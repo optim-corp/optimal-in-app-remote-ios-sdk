@@ -1,64 +1,52 @@
-# OPTiM Developer Registration / Obtaining Keys and Tool Information for your App
+# OPTiM 開発者登録 / SDK 利用アプリ用プロファイル・キー情報およびオペレーターツールの入手方法
 
- 1. Using the OPTiM Developer Registration Form below, please fill in your personal/corporate information and email the form to [developer@optim.co.jp](developer@optim.co.jp)
- 2. OPTiM will send you the following SDK items for your App:
-     - A profile and key pair that will identify your App on Optimal Remote
-     - A download URL for OPTiM’s Optimal Remote Operator Tool (for Windows)
-     - A user ID and password for accessing the Optimal Remote Operator Tool (valid for development purposes only)
+In App Remote SDK 利用のアプリ開発には、オプティムに開発登録が必要です。これは画面共有を行うオペレーターツールとの接続情報を発行するためです。
 
-If you need an additional profile/ key pair for a second App,
-please complete the Additional App Profile and Key Pair Request Form
-and email to [developer@optim.co.jp](developer@optim.co.jp).
+1.  開発登録は、以下の「オプティム開発登録フォーム」の各項目にご記入、使用許諾規約をご確認・ご同意のうえメールにてリクエストを [developer@optim.co.jp](developer@optim.co.jp) にご送信ください。
+2.  ご登録後、オプティムから SDK 利用アプリのための以下の情報、ツールをご提供いたします:
+    - オペレーターツールでのアプリ識別のためのプロファイル・キー情報
+    - オプティム Optimal Remote オペレーターツール（Windows 版）の入手 URL 情報
+    - Optimal Remote オペレーターツール を使用するためのログイン情報（開発用途のみに使用可能）
 
-After evaluating OPTiM’s “In-App Remote” technology,
-you may find that you require an official Operator Tool Account for commercial use.
-If this is the case, please visit Optimal Remote product page
-and contact us at [https://en.optim.co.jp/contact](https://en.optim.co.jp/contact).
+また、複数のアプリを作成する場合は、上記初回登録と同様に「追加アプリ プロファイル・キー情報リクエストフォーム」を使用して追加リクエストを[developer@optim.co.jp](developer@optim.co.jp) にご送信ください。
 
+アプリ開発・検証が完了し、Optimal Remote の機能を商用利用する場合、Optimal Remote オペレーターツールの使用契約が必要となります。
+Optimal Remote の詳細については製品ページ(http://www.optim.co.jp/products-detail/price/99)でご確認できます。
+契約申し込みはお問い合わせ[https://www.optim.co.jp/contact](https://www.optim.co.jp/contact)にてご連絡ください。
 
-## OPTiM Developer Registration Form
+## オプティム開発登録フォーム
 
-To register as an OPTiM developer, please complete the fields below: 
+本フォームをコピーし、下記項目にご記入、ご確認のうえリクエストをお送りください。
 
 ```
-Full Name:
-Email:
-Company:
-Deaprtment:
+企業名：
+部署名：
+ご担当者名：
+メールアドレス：
+In App Remote SDK を組み込むアプリケーション名：
+対象アプリの「Bundle Identifier」（SDK用埋込情報の生成で使用）：
+In App Remote SDK 機能をどのような用途でご活用でしょうか？（差しさわりのない範囲で詳細をお教えください）：
 
-App name building with In App Remote SDK:
-"Bundle Indentifier" for App built with SDK (For generating your App identify):
-How to utilize OPTiM’s Remote SDK features in your App?:
+Optimal Remote オペレーターツールおよび SDK 使用許諾規約
 
-Addendum: Agreement to use OPTiM’s Optimal Remote Operator Tool for Development Purposes Only
-
-Upon reviewing your registration, we will provide you with additional development information,
-as well as instructions on how to obtain the Optimal Remote Operator tool you’ll use with your App.
-The Optimal Remote Operator tool can only be used for development purposes only. 
-
-Commercial use is prohibited.
-
-Check “Yes” if you agree with these usage requirements. 
-
-□ Yes, I agree an agreement of In App Remote SDK (LICENSE.TXT)
-  and to use the Optimal Remote Operator tool for development purposes only.
+開発登録いただくことで In App Remote SDK を利用して開発を行うアプリケーションに組み込む ID 情報（プロファイル、キー情報）を提供いたします。また同時に開発用の Optimal Remote オペレーターツールの利用方法をご案内いたします。
+提供されるオペレーターツールは、アプリケーション開発時の開発検証目的にのみ使用可能であり、以下の同意事項を確認の上、ご同意いただける場合は先頭のボックスに了承確認のチェックを記入してご返信ください。
+ 
+□ はい、In App Remote SDK の SDK 使用許諾規約（LICENSE.TXT）および提供されるオペレーターツールを開発登録を行ったアプリケーション開発用途のみに使用することに同意いたします。
 
 ```
 
-## Additional App Profile and Key Pair Request Form
+## 追加アプリ プロファイル・キー情報リクエストフォーム
 
-If you would like to develop a second App using OPTiM’s In-App Remote SDK,
-please fill in the fields below. We’ll send you an additional App Profile and key pair.
-
-```
-Full Name:
-Email:
-Company:
-Deaprtment:
-
-Describe the second App name building with In App Remote SDK:
-"Bundle Indentifier" for App built with SDK (For generating your App identify):
-How to utilize OPTiM’s Remote SDK features in your App?:
+初回以降の In-App Remote SDK を利用するアプリ開発を行う場合は、本フォームをコピーし、下記項目にご記入のうえリクエストをお送りください。
 
 ```
+企業名：
+部署名：
+ご担当者名：
+メールアドレス：
+対象アプリの「Bundle Identifier」（SDK用埋込情報の生成で使用）：
+In App Remote SDK を組み込むアプリケーション名：
+In App Remote SDK 機能をどのような用途でご活用でしょうか？（差しさわりのない範囲で詳細をお教えください）：  
 
+```
