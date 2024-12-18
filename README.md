@@ -500,3 +500,7 @@ SDK では、以下の API タイプにアクセスしています。以下の�
 | ------------------ | ------------ |
 | オーディオデータ   | アプリの機能 |
 | カスタマーサポート | アプリの機能 |
+
+## 音声通話機能を使用しない場合
+
+上記の「[1. OptimalRemote.xcframework ディレクトリをプロジェクトに追加する](#1-optimalremotexcframework-ディレクトリをプロジェクトに追加する)」にて、プロジェクトに追加する xcframework を OptimalRemoteNoVoIP.xcframework としていただくことで音声通話機能を除いた SDK を利用できます。

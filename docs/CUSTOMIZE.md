@@ -49,6 +49,58 @@ iOS 8 以降で WKWebView の表示画面を画面共有したい場合、 `ORIA
 
 ### ソースコード例
 
+<details open>
+<summary>Swift</summary>
+
+```swift
+if let systemVersion = Float(UIDevice.current.systemVersion) {
+    session.screenSharingBestEffortCaptureEnabled = systemVersion >= 8.0
+}
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
+
 ```objectivec
 self.session.screenSharingBestEffortCaptureEnabled = [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0;
 ```
+
+</details>
+
+## SDK 表示 の言語切り替え
+
+SDK が UI 上に表示している言語を切り替えるには以下のように`ORIASession`クラスの`setLocale`メソッドを呼び出してください。
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+// 英語に切り替える
+self.session.setLocale(Locale.en)
+
+// 日本語に切り替える
+self.session.setLocale(Locale.ja)
+
+// 端末設定に従う
+self.session.setLocale(Locale.system)
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
+
+```objc
+// 英語に切り替える
+[self.session setLocale:LocaleEn];
+
+// 日本語に切り替える
+[self.session setLocale:LocaleJa];
+
+// 端末設定に従う
+[self.session setLocale:LocaleSystem];
+```
+
+</details>

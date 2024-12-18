@@ -2,6 +2,24 @@
 
 このプロジェクトに対するすべての重要な変更は、このファイルに文書化されます。
 
+## [2.1.2] - 2024-12-18
+
+### Changed
+
+- 音声通話機能を除いた SDK（[OptimalRemoteNoVoIP.xcframework.zip](./OptimalRemoteNoVoIP.xcframework.zip)）を追加しました。
+
+> [!NOTE]
+> OptimalRemoteNoVoIP.xcframework.zip は音声通話機能に関するモジュールを除いていますが、その他の機能に差分はありません。
+
+- SDK が UI 上に表示している言語を切り替える API として`ORIASession.setLocale`を追加しました。
+
+> [!NOTE]
+> SDK の表示言語切り替えの詳細は[CUSTOMIZE.md](./docs/CUSTOMIZE.md)をご参照ください。
+
+### Fixed
+
+- `UIView`（およびその派生クラス）に`UIGestureRecognizerDelegate`を準拠させているアプリに組み込む際ビルドエラーとなる不具合を修正しました。
+
 ## [2.1.1] - 2024-10-04
 
 ### Changed
