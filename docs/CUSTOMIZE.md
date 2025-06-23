@@ -104,3 +104,67 @@ self.session.setLocale(Locale.system)
 ```
 
 </details>
+
+## SDK 表示 UI のデザインカスタマイズ
+
+SDK が表示する UI の画像や文言はカスタマイズすることができます。
+
+### 画像のカスタマイズ
+
+[2. OptimalRemoteResources ディレクトリ をプロジェクトに追加する](../README.md#2-optimalremoteresources-ディレクトリ-をプロジェクトに追加する)にて、追加する画像を変更することでカスタマイズすることができます。
+
+例として、サポート中のアイコンを変更したい場合は`OptimalRemoteIcon.png`というファイル名で、カスタマイズ後の画像をプロジェクトに追加してください。
+
+カスタマイズできる画像と対応するファイル名は以下のとおりです。
+
+| 項番 | 画像                                 | 備考                                         | デフォルト                                                                                        | 推奨サイズ（Retina ディスプレイでの倍率） |
+| ---- | ------------------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| 1    | `OptimalRemoteIcon.png`              | 画面共有中のアイコン                         | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteIcon.png" height="32px">              | 114 px × 114 px                           |
+| 2    | `OptimalRemoteBalloonOnTopRight.png` | 画面共有開始時に表示する吹き出し             | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteBalloonOnTopRight.png" height="32px"> | 64 px × 48 px                             |
+| 3    | `OptimalRemoteBanner.png`            | 画面上部に表示されるロゴ画像                 | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteBanner.png" height="32px">            | 206 px × 32 px                            |
+| 4    | `OptimalRemoteTicketBackground.png`  | 受付番号の背景画像                           | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteTicketBackground.png" height="32px">  | 512 px × 210 px                           |
+| 5    | `OptimalRemoteSpeakerLoud.png`       | 画面共有中メニューのスピーカーオン時のボタン | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteSpeakerLoud.png" height="32px">       | 144 px × 144 px                           |
+| 6    | `OptimalRemoteSpeakerNormal.png`     | 画面共有中メニューのスピーカーオフ時のボタン | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteSpeakerNormal.png" height="32px">     | 144 px × 144 px                           |
+| 7    | `OptimalRemoteMicOn.png`             | 画面共有中メニューのマイクオン時のボタン     | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteMicOn.png" height="32px">             | 144 px × 144 px                           |
+| 8    | `OptimalRemoteMicOff.png`            | 画面共有中メニューのマイクオフ時のボタン     | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteMicOff.png" height="32px">            | 144 px × 144 px                           |
+| 9    | `OptimalRemoteDisconnect.png`        | 画面共有中メニューの切断ボタン               | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteDisconnect.png" height="32px">        | 144 px × 144 px                           |
+
+> [!WARNING]
+> 画像は png のみ対応しております。
+
+> [!WARNING]
+> 推奨サイズを大きく超える、または大きく下回る場合は UI がレイアウト崩れする場合がございます。
+
+### 文言のカスタマイズ
+
+[2. OptimalRemoteResources ディレクトリ をプロジェクトに追加する](../README.md#2-optimalremoteresources-ディレクトリ-をプロジェクトに追加する)で追加した`OptimalRemoteLocalizable.strings`の文言を変更することでカスタマイズすることができます。
+
+- 日本語：[OptimalRemoteResources/ja.lproj/OptimalRemoteLocalizable.strings](../OptimalRemoteResources/ja.lproj/OptimalRemoteLocalizable.strings)
+- 英語：[OptimalRemoteResources/en.lproj/OptimalRemoteLocalizable.strings](../OptimalRemoteResources/en.lproj/OptimalRemoteLocalizable.strings)
+
+例として、 画面共有中メニューの切断ボタンの英語版のラベルを`DISCONNECT`に変更する場合を以下に示します。
+
+```diff
+--- a/OptimalRemoteResources/en.lproj/OptimalRemoteLocalizable.strings
++++ b/OptimalRemoteResources/en.lproj/OptimalRemoteLocalizable.strings
+@@ -53,4 +53,4 @@
+
+ "ORIAAssistiveMenuSpeakerButtonLabel" = "Speaker";
+ "ORIAAssistiveMenuMuteButtonLabel" = "Mute";
+-"ORIAAssistiveMenuDisconnectButtonLabel" = "Disconnect";
++"ORIAAssistiveMenuDisconnectButtonLabel" = "DISCONNECT";
+```
+
+カスタマイズできる文言と対応するキーは以下のとおりです。
+
+| 項番 | キー                                     | 備考                                         | デフォルト（日本語）                                 | デフォルト（英語）                                  |
+| ---- | ---------------------------------------- | -------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
+| 1    | `ORIABalloonTapToExitMessage`            | 画面共有開始時の吹き出し内の文言             | `終了する場合は\r\nタップしてください。`             | `Tap above icon to exit.`                           |
+| 2    | `ORIADidReserveMessage`                  | 受付番号の上に表示される文言                 | `下記の受付番号を\r\nオペレーターにお伝えください。` | `Please tell below \r\nReceipt Number to operator.` |
+| 3    | `ORIADialogSDPCancelButtonTitleCancel`   | 受付番号の下に表示されるボタンのラベル       | `中断する`                                           | `Cancel`                                            |
+| 4    | `ORIAAssistiveMenuSpeakerButtonLabel`    | 画面共有中メニューのスピーカーボタンのラベル | `スピーカー`                                         | `Speaker`                                           |
+| 5    | `ORIAAssistiveMenuMuteButtonLabel`       | 画面共有中メニューのマイクオンボタンのラベル | `消音`                                               | `Mute`                                              |
+| 6    | `ORIAAssistiveMenuDisconnectButtonLabel` | 画面共有中メニューの切断ボタンのラベル       | `切断`                                               | `Disconnect`                                        |
+
+> [!WARNING]
+> デフォルトの文言の文字数を大きく超える、または大きく下回る場合は UI がレイアウト崩れする場合がございます。
