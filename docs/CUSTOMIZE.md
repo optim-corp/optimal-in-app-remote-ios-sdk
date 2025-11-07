@@ -168,3 +168,59 @@ SDK が表示する UI の画像や文言はカスタマイズすることがで
 
 > [!WARNING]
 > デフォルトの文言の文字数を大きく超える、または大きく下回る場合は UI がレイアウト崩れする場合がございます。
+
+## マスキング機能
+
+オペレーターツールに共有したくない View はマスキングすることができます。
+
+### タグの指定
+
+共有したくない View の [tag](https://developer.apple.com/documentation/uikit/uiview/tag) を指定し、対象の View をマスキングして表示します。
+
+例として、「100」、「101」のタグがついた View をマスキングする場合は以下のように実装してください。
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+self.session.setMaskElements([100, 101])
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
+
+```objectivec
+[self.session setMaskElements:@[@100, @101]];
+```
+
+</details>
+
+### ViewController の継承
+
+画面遷移のアニメーション中に一瞬マスキングの対象 View が共有されないように、画面遷移を検知する必要があります。
+
+SDK 指定の ViewController を継承してください。
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+class XxxViewController: ORIAMaskViewController {
+// ...
+}
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
+
+```objectivec
+@interface XxxViewController: ORIAMaskViewController
+// ...
+@end
+```
+
+</details>
