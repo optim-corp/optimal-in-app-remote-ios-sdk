@@ -2,6 +2,79 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.0] - 2026-02-24
+
+### Changed
+
+- Added screen sharing pause feature.
+
+> [!NOTE]
+> Please refer to [CUSTOMIZE.en.md](./docs/CUSTOMIZE.en.md) for details on the screen sharing pause feature.
+
+- Added support for iOS 26.
+
+## [2.3.0] - 2025-11-07
+
+### Changed
+
+- Added masking feature.
+
+> [!NOTE]
+> Please refer to [CUSTOMIZE.en.md](./docs/CUSTOMIZE.en.md) for details on the masking feature.
+
+## [2.2.0] - 2025-06-23
+
+### Changed
+
+- Added UI design customization feature for SDK-displayed UI.
+
+> [!NOTE]
+> Please refer to [CUSTOMIZE.en.md](./docs/CUSTOMIZE.en.md) for details on the design customization feature.
+
+## [2.1.2] - 2024-12-18
+
+### Changed
+
+- Added SDK without voice call feature ([OptimalRemoteNoVoIP.xcframework.zip](./OptimalRemoteNoVoIP.xcframework.zip)).
+
+> [!NOTE]
+> OptimalRemoteNoVoIP.xcframework.zip excludes modules related to the voice call feature, but there are no differences in other features.
+
+- Added `ORIASession.setLocale` as an API to switch the language displayed by the SDK in the UI.
+
+> [!NOTE]
+> Please refer to [CUSTOMIZE.en.md](./docs/CUSTOMIZE.en.md) for details on switching the display language of the SDK.
+
+### Fixed
+
+- Fixed a build error that occurred when incorporating the SDK into apps that conform `UIGestureRecognizerDelegate` to `UIView` (and its derived classes).
+
+## [2.1.1] - 2024-10-04
+
+### Changed
+
+- Added support for iOS 18.
+
+### Fixed
+
+- Fixed an issue where the system model of device information had an invalid value.
+
+## [2.1.0] - 2024-05-14
+
+### Changed
+
+- Added support for the Simulator.
+
+> [!NOTE]
+> Frameworks for physical devices and simulators are bundled in the xcframework.
+> When incorporating, please add the xcframework directory to your project.
+> Please refer to [README.en.md](./README.en.md) for details.
+
+- Added support for Library Evolution.
+
+> [!NOTE]
+> When incorporating into Swift apps, it is no longer necessary to match the Swift compiler version with this SDK.
+
 ## [2.0.0] - 2024-03-22
 
 ### Changed

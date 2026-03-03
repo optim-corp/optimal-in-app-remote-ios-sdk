@@ -8,13 +8,13 @@ Optimal In-App Remote SDK for iOS は、iOS アプリの遠隔支援を実現す
 ## 対象環境
 
 - アプリ動作環境
-  1.  iOS 12 〜 iOS 18
-  2.  上記 OS で動作している iPhone または iPad
-  3.  英語、日本語
-      - 上記以外の言語環境では英語表記になります
-  4.  インターネットに接続できるネットワーク環境
+  1. iOS 15 〜 iOS 26 / iPadOS 15 〜 iPadOS 18
+  1. 上記 OS で動作している iPhone または iPad
+  1. 英語、日本語
+     - 上記以外の言語環境では英語表記になります
+  1. インターネットに接続できるネットワーク環境
 - 開発環境
-  1.  Xcode 16.0 以降
+  1. Xcode 16.0 以降
 
 ## この SDK でできること
 
@@ -44,9 +44,9 @@ SDK を組み込んだアプリの画面にオペレーターから指マーク�
 
 [詳しい手順はこちらを参照してください。](docs/REGISTRATION.md)
 
-1.  SDK を利用するためのプロファイル・キーペア
-2.  オペレーターツール (Windows 版)
-3.  オペレーターツールを利用するためのアカウント (ID・パスワード)
+1. SDK を利用するためのプロファイル・キーペア
+1. オペレーターツール (Windows 版)
+1. オペレーターツールを利用するためのアカウント (ID・パスワード)
 
 ### 0. この Git レポジトリをチェックアウトする
 
@@ -71,14 +71,14 @@ OptimalRemoteResources ディレクトリには、SDK を利用するのに必�
 
 SDK を利用したアプリをビルドするには、以下の Framework へのリンクを追加する必要があります。
 
-1.  AudioToolbox.framework
-2.  AVFoundation.framework
-3.  CoreMedia.framework
-4.  CoreVideo.framework
-5.  OpenGLES.framework
-6.  SystemConfiguration.framework
-7.  Security.framework
-8.  libsqlite3.tbd
+1. AudioToolbox.framework
+1. AVFoundation.framework
+1. CoreMedia.framework
+1. CoreVideo.framework
+1. OpenGLES.framework
+1. SystemConfiguration.framework
+1. Security.framework
+1. libsqlite3.tbd
 
 ### 4. SDK に必要なリンカフラグを追加する
 

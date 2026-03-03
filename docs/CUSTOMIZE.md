@@ -128,6 +128,7 @@ SDK が表示する UI の画像や文言はカスタマイズすることがで
 | 7    | `OptimalRemoteMicOn.png`             | 画面共有中メニューのマイクオン時のボタン     | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteMicOn.png" height="32px">             | 144 px × 144 px                           |
 | 8    | `OptimalRemoteMicOff.png`            | 画面共有中メニューのマイクオフ時のボタン     | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteMicOff.png" height="32px">            | 144 px × 144 px                           |
 | 9    | `OptimalRemoteDisconnect.png`        | 画面共有中メニューの切断ボタン               | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemoteDisconnect.png" height="32px">        | 144 px × 144 px                           |
+| 10   | `OptimalRemotePauseIcon.png`         | 画面共有一時停止中のアイコン                 | <img src="../OptimalRemoteResources/Base.lproj/OptimalRemotePauseIcon.png" height="32px">         | 512 px × 512 px                           |
 
 > [!WARNING]
 > 画像は png のみ対応しております。
@@ -221,6 +222,52 @@ class XxxViewController: ORIAMaskViewController {
 @interface XxxViewController: ORIAMaskViewController
 // ...
 @end
+```
+
+</details>
+
+## 画面共有一時停止機能
+
+オペレーターとの画面共有を一時的に停止することができます。
+
+画面共有の停止中もオペレーターツールとの接続は継続されますので、クライアントツールから再度画面共有を開始することができます。
+
+オペレーターとの画面共有を一時的に停止するには、以下のように `ORIASession` クラスの `pause` メソッドを呼び出してください。
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+self.session.pause()
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
+
+```objectivec
+[self.session pause];
+```
+
+</details>
+
+オペレーターとの画面共有を再度開始するには、以下のように `ORIASession` クラスの `resume` メソッドを呼び出してください。
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+self.session.resume()
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
+
+```objectivec
+[self.session resume];
 ```
 
 </details>

@@ -1,3 +1,5 @@
+[README in Japanese](./README.md)
+
 # Optimal In-App Remote SDK for iOS
 
 "Optimal In-App Remote SDK for iOS" is a developer kit that provides remote assistance features for your iOS app.
@@ -6,13 +8,13 @@ By incorporating this SDK into your iOS application, you can provide remote assi
 ## Operating environment
 
 - Operating Environment for app
-  1.  iOS 12 - iOS 17
-  2.  iPhone or iPad running on operating system above are supported.
-  3.  English / Japanese environment
-      - UIs will be displayed in English for languages not listed above.
-  4.  Access to the Internet is required.
+  1. iOS 15 - iOS 26 / iPadOS 15 - iPadOS 18
+  1. iPhone or iPad running on operating system above are supported.
+  1. English / Japanese environment
+     - UIs will be displayed in English for languages not listed above.
+  1. Access to the Internet is required.
 - Required development environment
-  1.  Xcode 15.0 or later
+  1. Xcode 16.0 or later
 
 ## SDK features
 
@@ -40,21 +42,21 @@ SDK also provides VoIP voice calls between app user and remote operator for easi
 
 Before starting with the procedure below, register as a developer and make sure you have all the requirements listed below:
 
-[Please refer here for the detail request steps.](docs/REGISTRATION.md)
+[Please refer here for the detail request steps.](docs/REGISTRATION.en.md)
 
-1.  Profile and key pair required for SDK
-2.  Optimal Remote Operator Tool (for Windows)
-3.  User account (user ID and password) for using Optimal Remote Operator Tool
+1. Profile and key pair required for SDK
+1. Optimal Remote Operator Tool (for Windows)
+1. User account (user ID and password) for using Optimal Remote Operator Tool
 
 ### 0. Run checkout on the following git repository.
 
-When downloaded as a ZIP file, files contained in "OptimalRemote.framework" lose structure and becomes invalid. Make sure to use Git repository instead and run checkout.
+When downloaded as a ZIP file, files contained in "OptimalRemote.xcframework" lose structure and becomes invalid. Make sure to use Git repository instead and run checkout.
 
-Next, unzip "OptimalRemote.framework.zip" in the directory that you checked out.
+Next, unzip "OptimalRemote.xcframework.zip" in the directory that you checked out.
 
-### 1. Add "OptimalRemote.framework" directory to your project.
+### 1. Add "OptimalRemote.xcframework" directory to your project.
 
-"OptimalRemote.framework" directory contains a set of header files and static library files. Follow the instructions below to add "OptimalRemote.framework" contained in the Git repository to your project.
+"OptimalRemote.xcframework" directory contains a set of header files and static library files. Follow the instructions below to add "OptimalRemote.xcframework" contained in the Git repository to your project.
 
 - [Embedding Frameworks In An App : Embedding a Framework in iOS, macOS, watchOS, and tvOS Apps](https://developer.apple.com/library/archive/technotes/tn2435/_index.html#//apple_ref/doc/uid/DTS40017543-CH1-EMBED_IN_APP_SECTION)
 - [Project Navigator Help: Adding an Existing File or Folder](https://developer.apple.com/library/ios/recipes/xcode_help-structure_navigator/articles/Adding_an_Existing_File_or_Folder.html)
@@ -69,14 +71,14 @@ Next, unzip "OptimalRemote.framework.zip" in the directory that you checked out.
 
 To successfully build apps with SDK features, following Framework links need to be added to your project.
 
-1.  AudioToolbox.framework
-2.  AVFoundation.framework
-3.  CoreMedia.framework
-4.  CoreVideo.framework
-5.  OpenGLES.framework
-6.  SystemConfiguration.framework
-7.  Security.framework
-8.  libsqlite3.tbd
+1. AudioToolbox.framework
+1. AVFoundation.framework
+1. CoreMedia.framework
+1. CoreVideo.framework
+1. OpenGLES.framework
+1. SystemConfiguration.framework
+1. Security.framework
+1. libsqlite3.tbd
 
 ### 4. Adding linker flags required for SDK
 
@@ -86,8 +88,8 @@ Because SDK utilizes category classes, you need to add both `-ObjC` and `-lc++ -
 
 ### 5. Adding settings required for using SDK
 
-1.  Please add `$(SDKROOT)/usr/lib/swift` in `Library Search Paths` of `Build Settings`.
-2.  If `Minimum Deployments` of application using SDK is iOS 12 or less, please add `/usr/lib/swift` in `Runpath Search Paths` of `Build Settings`.
+1. Please add `$(SDKROOT)/usr/lib/swift` in `Library Search Paths` of `Build Settings`.
+1. If `Minimum Deployments` of application using SDK is iOS 12.1 or less, please add `/usr/lib/swift` in `Runpath Search Paths` of `Build Settings`.
 
 ## Tutorials for using SDK
 
@@ -100,6 +102,36 @@ Following code is not necessary if your app does not support screen rotation.
 Screen displayed by SDK is displayed in window that is not "keyWindow". Therefore, device's screen rotation needs to be implemented separately.
 
 In the case of App-Based Life-Cycle apps, insert following codes to `application:willChangeStatusBarOrientation:duration:` method in `UIApplicationDelegate` protocol.
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+...
+// 1. Importing headers required for SDK.
+import OptimalRemote
+...
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    ...
+    func application(
+        _ application: UIApplication,
+        willChangeStatusBarOrientation newStatusBarOrientation: UIInterfaceOrientation,
+        duration: TimeInterval
+    ) {
+        ...
+        // 2. When devices are rotated, rotate the screen displayed by SDK.
+        ORIAWindow.setOrientation(newStatusBarOrientation, withDuration: duration)
+    }
+}
+...
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
 
 ```objc
 ...
@@ -116,7 +148,36 @@ In the case of App-Based Life-Cycle apps, insert following codes to `application
 ...
 ```
 
-In the case of a Scene-Based Life-Cycle app, the following code can be added to the `UIWindowSceneDelegate` protocol's For apps with `UIWindowSceneDelegate` protocol, you can add the following code to the `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` method.
+</details>
+
+In the case of a Scene-Based Life-Cycle app, you can add the following code to the `windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:` method in the `UIWindowSceneDelegate` protocol.
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+...
+// 1. Importing headers required for SDK.
+import OptimalRemote
+...
+
+func windowScene(
+    _ windowScene: UIWindowScene,
+    didUpdate previousCoordinateSpace: any UICoordinateSpace,
+    interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation,
+    traitCollection previousTraitCollection: UITraitCollection
+) {
+    ...
+    // 2. When devices are rotated, rotate the screen displayed by SDK.
+    ORIAWindow.setOrientation(windowScene.interfaceOrientation, withDuration: 0)
+}
+...
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
 
 ```objc
 ...
@@ -135,6 +196,8 @@ In the case of a Scene-Based Life-Cycle app, the following code can be added to 
 ...
 ```
 
+</details>
+
 For more information about App-Based Life-Cycle and Scene-Based Life-Cycle, please refer to the following.
 
 - [Managing Your App's Life Cycle](https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle?language=objc)
@@ -142,6 +205,53 @@ For more information about App-Based Life-Cycle and Scene-Based Life-Cycle, plea
 ### 2. Create an instance of "ORIASession" class.
 
 For this tutorial, instance of "ORIASession" class is created using `viewDidLoad` method derived from `UIViewController` class. "ORIASession" class is one of SDK's core classes for implementing iOS app remote support.
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+...
+// 3. Importing headers required for SDK.
+import OptimalRemote
+...
+
+class XxxViewController: UIViewController, ORIASessionControllerAppDelegate {
+    ...
+    // 5. Add "ORIASession" control class to the property.
+    var controller: ORIASessionController? = nil
+    // 6. Add "ORIASession" class to the property.
+    var session: ORIASession? = nil
+    ...
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ...
+        // 7. Copy and paste the content of ".profile" to replace "XXXXXXXX" below:
+        let PROFILE = "XXXXXXXX"
+        // 8. Copy and paste the content of ".key" to replace "XXXXXXXX" below:
+        let KEY = "XXXXXXXX"
+
+        // 9. Create an instance of "ORIASession" control class.
+        self.controller = ORIASessionController.defaultController()
+        self.controller?.appDelegate = self
+
+        // 10. Create an instance of "ORIASession" class.
+        self.session = ORIASession.sessionForProfile(PROFILE, signedBy: KEY)
+        // Enable VoIP (default: NO)
+        self.session?.voiceChatEnabled = true
+        // Output audio from the speakers when no headphone is connected (default: NO).
+        self.session?.voiceChatOverridesSpeakerWhenNoHeadphones = true
+        self.session?.delegate = self.controller
+        self.session?.loadDefaultPointerImages()
+    }
+    ...
+}
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
 
 ```objc
 ...
@@ -181,9 +291,52 @@ For this tutorial, instance of "ORIASession" class is created using `viewDidLoad
 }
 ```
 
+</details>
+
 ### 3. Start "ORIASession" when the button is tapped.
 
 In this tutorial, the derived class of "UIViewController" class has "UIButton" class property "helpMeButton". We insert following codes so that "ORIASession" is initiated when this button is tapped.
+
+<details open>
+<summary>Swift</summary>
+
+```swift
+...
+// 11. Method for initiating "ORIASession"
+func controllerDidOpen(_ controller: ORIASessionController) {
+    // Disable button until "ORIASession" is completed.
+    self.helpButton.isEnabled = false
+}
+
+// 12. Method for completing "ORIASession"
+func controllerDidComplete(
+    _ controller: ORIASessionController,
+    remoteConnectionHasEstablished: Bool
+) {
+    // Enable button after "ORIASession" is completed.
+    self.helpButton.isEnabled = true
+    // Displaying completion screen
+    if remoteConnectionHasEstablished {
+        ORIAUISplashWindow.showForCompletion()
+    }
+}
+
+//  13. Method to run when "helpMeButton" is tapped
+@IBAction func helpMeButtonDidTouchUpInside(_ sender: UIButton) {
+    // Displaying startup screen and initiate "ORIASession"
+    if self.controller?.canOpen == true {
+        ORIAUISplashWindow.showWithBlock {
+            self.session?.open()
+        }
+    }
+}
+...
+```
+
+</details>
+
+<details>
+<summary>Objective-C</summary>
 
 ```objc
 ...
@@ -215,6 +368,8 @@ In this tutorial, the derived class of "UIViewController" class has "UIButton" c
 }
 ...
 ```
+
+</details>
 
 ### 4. Configure App Transport Security
 
@@ -252,7 +407,7 @@ Add the ATS settings to the "plist" element of "Info.plist."
 Please add Background Modes settings to the "plist" element of "Info.plist".
 This prevents VoIP from disconnecting when the application is running in the background.
 
-```Info.plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -273,8 +428,6 @@ This will complete the preparations to be made on iOS application side.
 
 After building your app, run the app from the device with access to the Internet. Tap `helpMeButton` to display "Receipt Number". Enter this Receipt Number from Operator Tool. Operator Tool and App is connected and app screen is displayed on Operator Tool. Now you are ready to go!
 
-This completes the tutorial for SDK. Please contact us if you experience problems connecting to the Operator Tool.
-
 ### 7. Support for iOS 11 and later
 
 The following issue occurs when displaying a dialog using UIAlertView on iOS 11 and later.
@@ -292,7 +445,7 @@ This completes the tutorial. If you cannot connect to the operator tool successf
 
 ### 8. Configure Privacy Manifest
 
-Starting in spring 2024, if your new app or app update submission to the App Store, you’ll need to include the privacy manifest for the SDK.
+Starting in spring 2024, if your new app or app update submission to the App Store, you'll need to include the privacy manifest for the SDK.
 Please refer to the following documents for more information on privacy manifests.
 
 - [Privacy manifest files](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files)
@@ -329,7 +482,7 @@ See [Describing data use in privacy manifests](https://developer.apple.com/docum
 
 An array of dictionaries that describe the API types your app or third-party SDK accesses that have been designated as APIs that require reasons to access.
 
-The SDK accesses the following API types.See [Describing use of required reason API](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api) for the following keys and values.
+The SDK accesses the following API types. See [Describing use of required reason API](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api) for the following keys and values.
 
 | NSPrivacyAccessedAPIType                   | NSPrivacyAccessedAPITypeReasons |
 | ------------------------------------------ | ------------------------------- |
@@ -340,7 +493,7 @@ The SDK accesses the following API types.See [Describing use of required reason 
 
 ### 9. App Privacy on App Store Connect
 
-This information about your app’s privacy practices, including the practices of third-party partners whose code you integrate into your app, is required to submit new apps and app updates to the App Store.
+This information about your app's privacy practices, including the practices of third-party partners whose code you integrate into your app, is required to submit new apps and app updates to the App Store.
 
 When submitting your app, please describe the following "Types of data" and "Data use".
 
@@ -348,3 +501,7 @@ When submitting your app, please describe the following "Types of data" and "Dat
 | ---------------- | ----------------- |
 | Audio Data       | App Functionality |
 | Customer Support | App Functionality |
+
+## When not using the voice call feature
+
+By specifying OptimalRemoteNoVoIP.xcframework instead of OptimalRemote.xcframework in [1. Add "OptimalRemote.xcframework" directory to your project](#1-add-optimalremotexcframework-directory-to-your-project) above, you can use the SDK without the voice call feature.
