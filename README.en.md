@@ -42,8 +42,6 @@ SDK also provides VoIP voice calls between app user and remote operator for easi
 
 Before starting with the procedure below, register as a developer and make sure you have all the requirements listed below:
 
-[Please refer here for the detail request steps.](docs/REGISTRATION.en.md)
-
 1. Profile and key pair required for SDK
 1. Optimal Remote Operator Tool (for Windows)
 1. User account (user ID and password) for using Optimal Remote Operator Tool
