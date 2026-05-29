@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.1] - 2026-05-29
+
+- Fixed an issue where the icon state would become inconsistent when reconnecting while using the screen sharing pause feature.
+- Removed the registration flow documentation because its content no longer matched the current registration flow.
+
 ## [2.4.0] - 2026-02-24
 
 ### Changed
