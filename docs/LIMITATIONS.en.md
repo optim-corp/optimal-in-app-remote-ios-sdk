@@ -12,6 +12,7 @@
 8. If you quickly switch the app screen horizontally and vertically, the screen may appear collapsed in the operator tool.
 9. Voice call function is not available in IPv6 environment.
 10. If the WindowLevel of the app screen is higher than UIWindowLevelAlert, the screen displayed by the SDK may be hidden.
-11. When using the Multiple Windows function of iPad, the screen displayed by the SDK may not be displayed in the correct window.
-12. When using the masking feature, the screen is not shared during screen transition and scroll animations.
+11. When using the masking feature, the screen is not shared during screen transition and scroll animations.
     - Sharing resumes from the screen after the transition or scroll is complete.
+12. In apps using the App-based life cycle, if the window size is continuously changed while the reception number is displayed, the display may appear distorted.
+13. If the window size continues to be changed during screen sharing, screen sharing in the operator tool will stop during that time.

@@ -8,7 +8,7 @@ By incorporating this SDK into your iOS application, you can provide remote assi
 ## Operating environment
 
 - Operating Environment for app
-  1. iOS 15 - iOS 26 / iPadOS 15 - iPadOS 18
+  1. iOS 15 - iOS 27 / iPadOS 15 - iPadOS 27
   1. iPhone or iPad running on operating system above are supported.
   1. English / Japanese environment
      - UIs will be displayed in English for languages not listed above.
@@ -166,8 +166,10 @@ func windowScene(
     traitCollection previousTraitCollection: UITraitCollection
 ) {
     ...
-    // 2. When devices are rotated, rotate the screen displayed by SDK.
-    ORIAWindow.setOrientation(windowScene.interfaceOrientation, withDuration: 0)
+    // 2. When devices are rotated or the main window is resized, rotate and resize the screen displayed by SDK.
+    if let size = windowScene.keyWindow?.frame.size {
+        ORIAWindow.resize(to: size)
+    }
 }
 ...
 ```
@@ -188,13 +190,18 @@ func windowScene(
     interfaceOrientation:(UIInterfaceOrientation)previousInterfaceOrientation
     traitCollection:(UITraitCollection *)previousTraitCollection {
     ...
-    // 2. When devices are rotated, rotate the screen displayed by SDK.
-    [ORIAWindow setOrientation:[windowScene interfaceOrientation] withDuration:0];
+    // 2. When devices are rotated or the main window is resized, rotate and resize the screen displayed by SDK.
+    CGSize size = windowScene.keyWindow.frame.size;
+    [ORIAWindow resizeTo:size];
 }
 ...
 ```
 
 </details>
+
+> [!NOTE]
+> Please use `ORIAWindow.resize` from version 2.4.2 onward.
+> `ORIAWindow.setOrientation`, which was used in versions 2.4.1 and earlier, will be deprecated in the future.
 
 For more information about App-Based Life-Cycle and Scene-Based Life-Cycle, please refer to the following.
 
@@ -499,6 +506,17 @@ When submitting your app, please describe the following "Types of data" and "Dat
 | ---------------- | ----------------- |
 | Audio Data       | App Functionality |
 | Customer Support | App Functionality |
+
+### 10. Social Media Capabilities
+
+Starting in September 2026, indicating whether your app includes social media capabilities is required to submit new apps and app updates to the App Store.
+
+This SDK does not provide any social media capabilities.
+
+|                                          |    |
+| ---------------------------------------- | -- |
+| Social Media                             | No |
+| Social Media Disabled for Users Under 13 | No |
 
 ## When not using the voice call feature
 

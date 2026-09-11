@@ -8,7 +8,7 @@ Optimal In-App Remote SDK for iOS は、iOS アプリの遠隔支援を実現す
 ## 対象環境
 
 - アプリ動作環境
-  1. iOS 15 〜 iOS 26 / iPadOS 15 〜 iPadOS 18
+  1. iOS 15 〜 iOS 27 / iPadOS 15 〜 iPadOS 27
   1. 上記 OS で動作している iPhone または iPad
   1. 英語、日本語
      - 上記以外の言語環境では英語表記になります
@@ -93,7 +93,7 @@ SDK はカテゴリクラスを利用しているため、リンカフラグに`
 
 SDK を利用するには、いくらかお決まりのコードを記述する必要があります。
 
-### 1. 端末の画面回転に対応する
+### 1. 端末の画面回転・ウィンドウサイズ変更に対応する
 
 アプリが端末の画面対応に対応していない場合、以下の対応は不要です。
 
@@ -166,8 +166,10 @@ func windowScene(
     traitCollection previousTraitCollection: UITraitCollection
 ) {
     ...
-    // 2. 画面が回転した時に SDK が表示する画面を回転させる
-    ORIAWindow.setOrientation(windowScene.interfaceOrientation, withDuration: 0)
+    // 2. 画面が回転・サイズ変更した時に SDK が表示する画面を回転・リサイズさせる
+    if let size = windowScene.keyWindow?.frame.size {
+        ORIAWindow.resize(to: size)
+    }
 }
 ...
 ```
@@ -188,13 +190,18 @@ func windowScene(
     interfaceOrientation:(UIInterfaceOrientation)previousInterfaceOrientation
     traitCollection:(UITraitCollection *)previousTraitCollection {
     ...
-    // 2. 画面が回転した時に SDK が表示する画面を回転させる
-    [ORIAWindow setOrientation:[windowScene interfaceOrientation] withDuration:0];
+    // 2. 画面が回転・サイズ変更した時に SDK が表示する画面を回転・リサイズさせる
+    CGSize size = windowScene.keyWindow.frame.size;
+    [ORIAWindow resizeTo:size];
 }
 ...
 ```
 
 </details>
+
+> [!NOTE]
+> **バージョン2.4.2以降`ORIAWindow.resize`をご利用ください。**
+> 2.4.1以前のバージョンでご案内しておりました`ORIAWindow.setOrientation`は、今後廃止いたします。
 
 App-Based Life-Cycle や Scene-Based Life-Cycle については以下を参考にしてください。
 
@@ -498,6 +505,17 @@ SDK では、以下の API タイプにアクセスしています。以下の�
 | ------------------ | ------------ |
 | オーディオデータ   | アプリの機能 |
 | カスタマーサポート | アプリの機能 |
+
+### 10. ソーシャルメディア機能について
+
+2026 年 9 月以降、新規アプリまたはアプリのアップデートを App Store へ提出する場合、ソーシャルメディア機能があるかどうかを申告することが必要となります。
+
+本 SDK はソーシャルメディア機能を提供しておりません。
+
+|                                                      |        |
+| ---------------------------------------------------- | ------ |
+| ソーシャルメディア                                   | いいえ |
+| 13歳未満のユーザに対するソーシャルメディアの利用不可 | いいえ |
 
 ## 音声通話機能を使用しない場合
 

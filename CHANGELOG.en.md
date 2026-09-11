@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.2] - 2026-09-11
+
+### Changed
+
+- Added support for iOS 27.
+- Added support for the Split View feature.
+- Added support for the Multiple Windows feature.
+- Released `ORIAWindow.resize`.
+
+> [!NOTE]
+> Please refer to [README.md](./README.md) for details on `ORIAWindow.resize`.
+
+### Fixed
+
+- Fixed an issue where the red pen drawing would disappear when tilting the device forward during screen sharing.
+- Fixed an issue where the remote control button remained enabled in the Windows operator tool even when `ORIASession.remoteInputEnabled` was set to `false`.
+
 ## [2.4.1] - 2026-05-29
 
 - Fixed an issue where the icon state would become inconsistent when reconnecting while using the screen sharing pause feature.
